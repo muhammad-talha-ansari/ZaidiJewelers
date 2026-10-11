@@ -1,0 +1,920 @@
+/* ==========================================================================
+   ZAIDI JEWELERS - HOME PAGE COMPLETE STYLESHEET
+   CLASSES FORMAT: zd-jw-[section-identifier]-number
+   ========================================================================== */
+
+:root {
+  --zd-jw-bg-dark-1: #0A2422;
+  --zd-jw-bg-card-2: #061815;
+  --zd-jw-bg-cream-3: #FBF9F4;
+  --zd-jw-bg-sand-4: #F5F3EE;
+  --zd-jw-gold-primary-5: #D0A648;
+  --zd-jw-gold-hover-6: #B08A32;
+  --zd-jw-gold-light-7: #E3C588;
+  --zd-jw-text-dark-8: #1B1C19;
+  --zd-jw-text-muted-9: #727877;
+  --zd-jw-text-light-10: #FBF9F4;
+  --zd-jw-text-green-11: #C3D2CF;
+  --zd-jw-border-light-12: rgba(0, 0, 0, 0.08);
+  --zd-jw-border-dark-13: rgba(255, 255, 255, 0.12);
+
+  --zd-jw-font-serif-14: 'Bodoni Moda', serif;
+  --zd-jw-font-sans-15: 'Manrope', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--zd-jw-font-sans-15);
+  background-color: var(--zd-jw-bg-cream-3);
+  color: var(--zd-jw-text-dark-8);
+  overflow-x: hidden;
+}
+
+/* Base Shared Typography */
+h1, h2, h3 {
+  font-family: var(--zd-jw-font-serif-14);
+  font-weight: 400;
+}
+
+/* ==========================================
+   SECTION 1: HERO SECTION
+   ========================================== */
+.zd-jw-hero-sec-1 {
+  width: 100%;
+  background-color: var(--zd-jw-bg-dark-1);
+  color: var(--zd-jw-text-light-10);
+  min-height: 580px !important;
+  display: flex;
+}
+
+.zd-jw-hero-wrap-2 {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .zd-jw-hero-wrap-2 { grid-template-columns: 1fr 1fr; }
+}
+
+.zd-jw-hero-left-3 {
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) { .zd-jw-hero-left-3 { padding: 60px 0px 60px 100px; } }
+
+.zd-jw-hero-sub-4 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--zd-jw-gold-light-7);
+  margin-bottom: 24px;
+}
+
+.zd-jw-hero-title-6 {
+  font-size: 42px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) { .zd-jw-hero-title-6 { font-size: 57px; width: 80%; } }
+
+.zd-jw-hero-desc-7 {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--zd-jw-text-green-11);
+  max-width: 550px;
+  margin-bottom: 36px;
+}
+
+.zd-jw-hero-btns-8 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 640px) { .zd-jw-hero-btns-8 { flex-direction: row; } }
+
+.zd-jw-hero-btn-primary-9,
+.zd-jw-hero-btn-outline-10 {
+  height: 52px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.zd-jw-hero-btn-primary-9 {
+  background-color: var(--zd-jw-gold-primary-5);
+  color: #231903;
+}
+
+.zd-jw-hero-btn-primary-9:hover { background-color: var(--zd-jw-gold-hover-6); }
+
+.zd-jw-hero-btn-outline-10 {
+  background: transparent;
+  color: var(--zd-jw-text-light-10);
+  border: 1px solid var(--zd-jw-text-light-10);
+}
+
+.zd-jw-hero-btn-outline-10:hover {
+  background-color: var(--zd-jw-text-light-10);
+  color: var(--zd-jw-bg-dark-1);
+}
+
+.zd-jw-hero-sublink-12 {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--zd-jw-gold-light-7);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--zd-jw-gold-primary-5);
+}
+
+.zd-jw-hero-right-13 {
+  position: relative;
+  min-height: 400px;
+  background-color: var(--zd-jw-bg-card-2);
+}
+
+.zd-jw-hero-img-15 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================
+   SECTION 2: SHOP BY SHAPE
+   ========================================== */
+.zd-jw-shape-sec-16 {
+  padding: 60px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.zd-jw-shape-tag-18 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--zd-jw-gold-primary-5);
+}
+
+.zd-jw-shape-title-19 {
+  font-size: 38px;
+  margin-top: 6px;
+  margin-bottom: 40px;
+}
+
+.zd-jw-shape-grid-20 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) { .zd-jw-shape-grid-20 { grid-template-columns: repeat(5, 1fr); } }
+
+@media (min-width: 1024px) { .zd-jw-shape-grid-20 { grid-template-columns: repeat(10, 1fr); } }
+
+.zd-jw-shape-card-21 {
+  border: 1px solid var(--zd-jw-border-light-12);
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.zd-jw-shape-card-21:hover {
+  border-color: var(--zd-jw-gold-primary-5);
+  transform: translateY(-3px);
+}
+
+.zd-jw-shape-icon-22 { font-size: 24px; color: var(--zd-jw-text-dark-8); }
+.zd-jw-dia-shape-icon {width: auto; height: 40px;}
+.zd-jw-shape-name-23 { font-size: 12px; font-weight: 500; letter-spacing: 0.05em; }
+
+/* ==========================================
+   SECTION 3: FOUR SIGNATURE SETTINGS
+   ========================================== */
+.zd-jw-setting-sec-24 {
+  padding: 80px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.zd-jw-setting-head-25 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .zd-jw-setting-head-25 { flex-direction: row; align-items: flex-end; }
+}
+
+.zd-jw-setting-tag-27 { font-size: 11px; letter-spacing: 0.18em; color: var(--zd-jw-gold-primary-5); font-weight: 600; }
+.zd-jw-setting-title-28 { font-size: 38px; margin-top: 6px; }
+h2.zd-jw-setting-title-28 {margin-bottom: -10px;}
+
+.zd-jw-setting-sub-29 {
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--zd-jw-text-muted-9);
+}
+
+.zd-jw-setting-grid-30 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) { .zd-jw-setting-grid-30 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .zd-jw-setting-grid-30 { grid-template-columns: repeat(4, 1fr); } }
+
+.zd-jw-setting-card-31 {
+  background: #FFFFFF;
+  border: 1px solid #d0a5484d;
+  padding: 24px;
+  text-align: center;
+}
+
+.zd-jw-setting-imgbox-32 {
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.zd-jw-setting-img-33 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.zd-jw-setting-card-31:hover .zd-jw-setting-img-33 { transform: scale(1.05); }
+
+.zd-jw-setting-name-34 { font-size: 18px; margin-bottom: 6px; }
+.zd-jw-setting-price-35 { font-size: 13px; color: var(--zd-jw-text-muted-9); }
+
+.zd-jw-setting-foot-36 { text-align: center; margin-top: 40px; }
+.zd-jw-setting-link-37 {
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: #16645e;
+  text-decoration: underline var(--zd-jw-gold-primary-5) 1.2px;
+  text-underline-offset: 6px;
+  font-weight: 600;
+}
+
+.zd-jw-setting-link-37:hover  {
+  color: var(--zd-jw-gold-primary-5);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ==========================================
+   SECTION 4, 8 & 6: REUSABLE PRODUCT CARD
+   ========================================== */
+.zd-jw-trend-sec-38,
+.zd-jw-neck-sec-87 {
+  padding: 80px 85px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #f4f0e6;
+}
+
+.zd-jw-trend-head-39,
+.zd-jw-neck-head-88,
+.zd-jw-insta-head-130 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.zd-jw-trend-tag-40, .zd-jw-neck-tag-89, .zd-jw-insta-tag-131 {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--zd-jw-gold-primary-5);
+}
+
+span.zd-jw-trend-tag-40 {color: var(--zd-jw-gold-primary-5);}
+
+.zd-jw-trend-title-41, .zd-jw-neck-title-90, .zd-jw-insta-title-132 { font-size: 38px; margin-top: 6px; }
+h2.zd-jw-trend-title-41 {
+    margin-bottom: -10px;
+}
+
+h2.zd-jw-insta-title-132 {margin-bottom: -10px;}
+
+.zd-jw-trend-viewall-42, .zd-jw-neck-link-91, .zd-jw-insta-link-133 {
+  font-size: 14px; letter-spacing: 0.16em; font-weight: 600; color: #16645e; text-decoration: none; border-bottom: 1.2px solid var(--zd-jw-gold-primary-5); padding-bottom: 2px;
+}
+
+.zd-jw-neck-link-91:hover {color: var(--zd-jw-gold-primary-5); transition: all 0.3s ease-in-out;}
+
+a.zd-jw-trend-viewall-42:hover {  color: var(--zd-jw-gold-primary-5); transition: all 0.3s ease-in-out;}
+
+.zd-jw-trend-grid-43, .zd-jw-neck-grid-92 {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+}
+
+@media (min-width: 640px) { .zd-jw-trend-grid-43, .zd-jw-neck-grid-92 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .zd-jw-trend-grid-43, .zd-jw-neck-grid-92 { grid-template-columns: repeat(4, 1fr); } }
+
+.zd-jw-prod-card-44 {
+  background: #FFFFFF;
+  border: 1px solid var(--zd-jw-border-light-12);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.zd-jw-prod-card-44:hover {
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.zd-jw-prod-imgbox-45 {
+  position: relative;
+  aspect-ratio: 1;
+  background: #F9F8F6;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.zd-jw-prod-badge-46 {
+  position: absolute;
+  background: var(--zd-jw-bg-dark-1);
+  color: var(--zd-jw-gold-primary-5);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 7px 17px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.zd-jw-prod-wish-47 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: none;
+  font-size: 19px;
+  cursor: pointer;
+  z-index: 2;
+  color: var(--zd-jw-bg-dark-1);
+  background: #FBF9F4;
+  padding: 5px 12px;
+  font-weight: 500;
+  border: 1px solid var(--zd-jw-bg-sand-4);
+}
+
+.zd-jw-prod-wish-47:hover {
+  color: var(--zd-jw-bg-cream-3);
+  background: var(--zd-jw-gold-hover-6);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--zd-jw-gold-hover-6);
+}
+
+.zd-jw-prod-img-48 { width: 100%; height: 100%; object-fit: cover; }
+
+.zd-jw-prod-brand-49 { font-size: 11px; letter-spacing: 0.15em; color: var(--zd-jw-gold-primary-5); font-weight: 600; margin-bottom: 4px; }
+.zd-jw-prod-name-50 { font-size: 17px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; font-family: var(--zd-jw-font-serif-14); color: var(--zd-jw-bg-dark-1);}
+.zd-jw-prod-price-51 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.zd-jw-prod-desc-52 { font-size: 12px; color: var(--zd-jw-text-muted-9); padding-bottom: 13px; margin-bottom: 7px; margin-top: 5px; border-bottom: 1px solid #72787717; }
+
+.zd-jw-prod-swatches-53 { display: flex; gap: 6px; }
+.zd-jw-swatch-54 { width: 15px; height: 15px; border-radius: 50%; display: inline-block; cursor: pointer; }
+.zd-jw-swatch-gold-55 { background: #E6CA65; border: 1px solid #c8ad4b;}
+.zd-jw-swatch-silver-56 { background: #D8D8D8; border: 1px solid #b5b5b5;}
+.zd-jw-swatch-rose-57 { background: #E8B4A2; border: 1px solid #ca9d8f;}
+
+/* ==========================================
+   SECTION 5: SHOP BY CATEGORY (6 GRID)
+   ========================================== */
+.zd-jw-cat-sec-58 {
+  padding: 80px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.zd-jw-cat-head-59 { text-align: center; margin-bottom: 40px; }
+.zd-jw-cat-tag-60 { font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: var(--zd-jw-gold-primary-5); }
+.zd-jw-cat-title-61 { font-size: 38px; margin-top: 6px; }
+
+.zd-jw-cat-grid-62 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) { .zd-jw-cat-grid-62 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .zd-jw-cat-grid-62 { grid-template-columns: repeat(3, 1fr); } }
+
+.zd-jw-cat-card-63 {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.zd-jw-cat-img-64 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.zd-jw-cat-card-63:hover .zd-jw-cat-img-64 { transform: scale(1.06); }
+
+.zd-jw-cat-overlay-65 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #0a2422d9 0%, #0a242203 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #FFFFFF;
+}
+
+.zd-jw-cat-overlay-65:hover {
+  background: linear-gradient(to top, #0a2422 0%, #0a242238 60%);
+  transition: all 0.6s ease-in-out;
+}
+
+.zd-jw-cat-sub-66 { font-size: 11px; letter-spacing: 0.2em; font-weight: 600; color: var(--zd-jw-gold-primary-5);}
+.zd-jw-cat-name-67 { font-size: 30px; }
+
+/* ==========================================
+   SECTION 6: BEST SELLING HOOPS
+   ========================================== */
+.zd-jw-hoops-sec-68 { padding: 80px 24px; max-width: 1400px; margin: 0 auto; }
+.zd-jw-hoops-grid-69 { display: grid; grid-template-columns: 1fr; gap: 40px; }
+
+@media (min-width: 1024px) { .zd-jw-hoops-grid-69 { grid-template-columns: 1fr 1.2fr; } }
+
+.zd-jw-hoops-left-70 { height: 100%; min-height: 500px; }
+.zd-jw-hoops-img-71 { width: 100%; height: 100%; object-fit: cover; }
+
+.zd-jw-hoops-tag-74 { font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: var(--zd-jw-gold-primary-5); }
+.zd-jw-hoops-title-75 { font-size: 36px; margin-top: 6px; margin-bottom: 30px; }
+
+.zd-jw-hoops-cards-76 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* ==========================================
+   SECTION 7: YOUR PERSONAL JEWELER (ETHOS)
+   ========================================== */
+.zd-jw-ethos-sec-77 {
+  background-color: var(--zd-jw-bg-dark-1);
+  color: var(--zd-jw-text-light-10);
+  padding: 90px 24px;
+  text-align: center;
+}
+
+.zd-jw-ethos-head-78 { max-width: 650px; margin: 0 auto 60px auto; }
+.zd-jw-ethos-tag-79 { font-size: 11px; letter-spacing: 0.2em; color: var(--zd-jw-gold-light-7); font-weight: 600; }
+.zd-jw-ethos-title-80 { font-size: 42px; margin: 12px 0; }
+.zd-jw-ethos-sub-81 { font-size: 15px; color: var(--zd-jw-text-green-11); }
+
+.zd-jw-ethos-grid-82 {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) { .zd-jw-ethos-grid-82 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .zd-jw-ethos-grid-82 { grid-template-columns: repeat(4, 1fr); } }
+
+.zd-jw-ethos-card-83 {
+  background: #0c2b28;
+  border: 1px solid #d0a54843;
+  border-radius: 30px;
+  padding: 36px 24px;
+  text-align: left;
+}
+
+.zd-jw-ethos-card-83:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+    background: #0b2c29;
+    border: 1px solid #d0a5487a;
+}
+
+.zd-jw-ethos-icon-84 { font-size: 28px; color: var(--zd-jw-gold-primary-5); margin-bottom: 15px; }
+.zd-jw-ethos-icon-84 img {width: auto; height: 35px;}
+.zd-jw-ethos-cardtitle-85 { font-size: 18px; margin-bottom: 12px; color: var(--zd-jw-text-light-10); }
+.zd-jw-ethos-carddesc-86 { font-size: 14px; line-height: 1.6; color: var(--zd-jw-text-green-11); font-weight: 300; }
+p.zd-jw-ethos-carddesc-86 {
+    margin-top: -5px;
+}
+
+/* ==========================================
+   SECTION 9: TENNIS COLLECTION BANNER
+   ========================================== */
+.zd-jw-banner-sec-93 {
+  position: relative;
+  min-height: 520px;
+  background: url('Assets/TENNIS\ COLLECTION\ Image.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.zd-jw-banner-overlay-94 {
+  background: none;
+  padding: 60px 24px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.zd-jw-banner-tag-95 { font-size: 11px; letter-spacing: 0.2em; color: var(--zd-jw-gold-light-7); font-weight: 600; }
+.zd-jw-banner-title-96 { font-size: 48px; margin: 12px 0 16px 0; line-height: 1.1; }
+.zd-jw-banner-desc-97 { max-width: 580px; font-size: 14px; line-height: 1.6; margin-bottom: 32px; color: #E0E0E0; }
+
+.zd-jw-banner-btn-98 {
+  background-color: var(--zd-jw-gold-primary-5);
+  color: #231903;
+  padding: 14px 32px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.zd-jw-banner-btn-98:hover {
+  background-color: var(--zd-jw-text-light-10);
+  color: var(--zd-jw-bg-dark-1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ==========================================
+   SECTION 10 & 12: CLIENT STORY & GIFTING
+   ========================================== */
+.zd-jw-story-sec-99, .zd-jw-gift-sec-120 {
+  padding: 80px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.zd-jw-story-grid-100, .zd-jw-gift-grid-121 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .zd-jw-story-grid-100 { grid-template-columns: 0.8fr 1fr; }
+  .zd-jw-gift-grid-121 { grid-template-columns: 1fr 1fr; }
+}
+
+.zd-jw-story-img-102, .zd-jw-gift-img-128 { width: 100%; height: 100%; max-height: 500px; object-fit: cover; }
+img.zd-jw-gift-img-128 {height: 500px;}
+
+.zd-jw-story-tag-104, .zd-jw-gift-tag-123 { font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: var(--zd-jw-gold-primary-5); }
+.zd-jw-story-title-105, .zd-jw-gift-title-124 { font-size: 44px; margin: 12px 0 16px 0; }
+.zd-jw-story-title {line-height: 1.1em; font-size: 43px;}
+.zd-jw-story-desc-106, .zd-jw-gift-desc-125 { font-size: 14px; line-height: 1.65; color: var(--zd-jw-text-muted-9); margin-bottom: 32px; max-width: 550px; }
+p.zd-jw-story-desc-106 {width: 555px; font-size: 15px;}
+
+.zd-jw-story-btns-107 { display: flex; gap: 16px; }
+.zd-jw-story-btn1-108, .zd-jw-gift-btn-126 {
+  border: 1px solid var(--zd-jw-text-dark-8);
+  background: var(--zd-jw-bg-dark-1);
+  padding: 14px 26px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: var(--zd-jw-text-light-10);
+}
+
+.zd-jw-story-btn1-108:hover {background: var(--zd-jw-gold-primary-5); color: var(--zd-jw-bg-dark-1); border-color: var(--zd-jw-bg-dark-1);}
+
+.zd-jw-story-btn2-109 {
+  padding: 12px 24px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: var(--zd-jw-bg-dark-1);
+  border-bottom: 1.2px solid var(--zd-jw-gold-primary-5);
+}
+
+.zd-jw-story-btn2-109:hover {color: var(--zd-jw-gold-primary-5); transition: all 0.3s ease-in-out;}
+
+.zd-jw-gift-sec-120 { background: var(--zd-jw-bg-dark-1); color: #FFFFFF; max-width: 100%; }
+.zd-jw-gift-sec-120 .zd-jw-gift-grid-121 { max-width: 1400px; margin: 0 auto; }
+.zd-jw-gift-sec-120 .zd-jw-gift-tag-123 { color: var(--zd-jw-gold-light-7); }
+.zd-jw-gift-sec-120 .zd-jw-gift-desc-125 { color: var(--zd-jw-text-green-11); font-size: 15px; width: 417px;}
+.zd-jw-gift-btn-126 { background: var(--zd-jw-gold-primary-5); border: none; color: #000; }
+section.zd-jw-gift-sec-120 {padding: 0px 0px 0px 85px;}
+
+/* ==========================================
+   SECTION 11: THE MORE PROMISE
+   ========================================== */
+.zd-jw-promise-sec-110 {
+  padding: 90px 14px;
+  background-color: var(--zd-jw-bg-sand-4);
+  text-align: center;
+}
+
+.zd-jw-promise-head-111 { max-width: 600px; margin: 0 auto 50px auto; }
+.zd-jw-promise-tag-112 { font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: var(--zd-jw-gold-primary-5); }
+.zd-jw-promise-title-113 { font-size: 38px; margin: 8px 0; }
+.zd-jw-promise-sub-114 { font-size: 15px; color: var(--zd-jw-text-muted-9); }
+
+.zd-jw-promise-grid-115 {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) { .zd-jw-promise-grid-115 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .zd-jw-promise-grid-115 { grid-template-columns: repeat(4, 1fr); } }
+
+.zd-jw-promise-card-116 {
+  background: #FFFFFF;
+  padding: 32px 32px;
+  text-align: left;
+  border: 1px solid var(--zd-jw-border-light-12);
+}
+
+.zd-jw-promise-check-117 { color: var(--zd-jw-gold-primary-5); font-weight: bold; margin-bottom: 12px; display: block; }
+.checklist-image {width: auto; height: 22px;}
+.zd-jw-promise-cardtitle-118 { font-size: 17px; margin-bottom: 5px; font-family: var(--zd-jw-font-serif-14); font-weight: 600; color: var(--zd-jw-bg-dark-1); }
+.zd-jw-promise-carddesc-119 { font-size: 14px; color: var(--zd-jw-text-muted-9); line-height: 1.5; }
+
+/* ==========================================
+   SECTION 13: INSTAGRAM GRID
+   ========================================== */
+.zd-jw-insta-sec-129 { padding: 80px 24px; max-width: 1400px; margin: 0 auto; }
+
+.zd-jw-insta-grid-134 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) { .zd-jw-insta-grid-134 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .zd-jw-insta-grid-134 { grid-template-columns: repeat(6, 1fr); } }
+
+.zd-jw-insta-card-135 { aspect-ratio: 1; overflow: hidden; }
+.zd-jw-insta-img-136 { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.zd-jw-insta-card-135:hover .zd-jw-insta-img-136 { transform: scale(1.08); }
+
+/* ==========================================
+   SECTION 14: VISIT US IN CARMEL
+   ========================================== */
+.zd-jw-salon-sec-137 { padding: 80px 24px; max-width: 1400px; margin: 0 auto; }
+
+.zd-jw-salon-wrap-138 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid var(--zd-jw-border-light-12);
+}
+
+@media (min-width: 1024px) { .zd-jw-salon-wrap-138 { grid-template-columns: 1fr 1fr; } }
+
+.zd-jw-salon-img-140 { width: 100%; height: 100%; min-height: 450px; object-fit: cover; }
+
+.zd-jw-salon-right-141 { padding: 40px; }
+.zd-jw-salon-tag-142 { font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: var(--zd-jw-gold-primary-5); }
+.zd-jw-salon-title-143 { font-size: 38px; margin: 8px 0 32px 0; }
+
+.zd-jw-salon-block-144 { margin-bottom: 24px; }
+.zd-jw-salon-subhead-145 { font-size: 12px; letter-spacing: 0.15em; color: var(--zd-jw-gold-primary-5); font-weight: 600; margin-bottom: 4px; }
+.zd-jw-salon-text-146 { font-size: 14px; line-height: 1.6; color: var(--zd-jw-text-dark-8); }
+
+.zd-jw-salon-btns-147 { display: flex; gap: 16px; margin-top: 32px; }
+.zd-jw-salon-btn1-148 { background: var(--zd-jw-gold-primary-5); color: #000; padding: 12px 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-decoration: none; }
+.zd-jw-salon-btn2-149 { border: 1px solid var(--zd-jw-text-dark-8); color: #000; padding: 12px 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-decoration: none; }
+
+
+@media screen and (max-width: 767px) {
+  .zd-jw-shape-title-19 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .zd-jw-shape-name-23 {
+    font-size: 15px;
+}
+.zd-jw-hero-btn-primary-9, .zd-jw-hero-btn-outline-10 {
+    font-size: 13px;
+}
+.zd-jw-hero-sublink-12 {
+    font-size: 13px;
+}
+.zd-jw-setting-sec-24 {border-top: 1px solid #dfdfdf;}
+.zd-jw-setting-sec-24 {
+    padding: 51px 24px;
+}
+.zd-jw-setting-grid-30 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.zd-jw-setting-name-34 {
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: -20px;
+}
+.zd-jw-setting-title-28 {
+    font-size: 32px;
+}
+.zd-jw-setting-sub-29 {
+    font-size: 14px;
+}
+.zd-jw-setting-foot-36 {
+    margin-top: 23px;
+}
+.zd-jw-trend-sec-38, .zd-jw-neck-sec-87 {
+    padding: 60px 15px;
+}
+.zd-jw-trend-title-41, .zd-jw-neck-title-90, .zd-jw-insta-title-132 {
+    font-size: 33px;
+}
+.zd-jw-trend-grid-43, .zd-jw-neck-grid-92 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.zd-jw-prod-name-50 {
+    font-size: 16px;
+}
+.zd-jw-prod-badge-46 {
+    font-size: 9px;
+    padding: 5px 8px;
+}
+.zd-jw-prod-wish-47 {
+    padding: 3px 11px;
+}
+.zd-jw-prod-card-44 {
+    padding: 12px;
+}
+.zd-jw-cat-sec-58 {
+    padding: 60px 18px;
+}
+.zd-jw-cat-title-61 {
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: -10px;
+}
+.zd-jw-cat-sub-66 {
+    font-size: 13px;
+}
+.zd-jw-cat-name-67 {
+    font-size: 32px;
+}
+.zd-jw-cat-grid-62 {
+    gap: 14px;
+}
+.zd-jw-cat-sec-58 {
+  border-bottom: 1px solid #dfdfdf;
+}
+.zd-jw-hoops-sec-68 {
+    padding: 60px 18px;
+}
+.zd-jw-hoops-title-75 {
+    font-size: 32px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+}
+.zd-jw-hoops-cards-76 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.zd-jw-ethos-sec-77 {
+    padding: 60px 20px;
+}
+.zd-jw-ethos-title-80 {
+    font-size: 32px;
+    margin: 5px 0;
+}
+.zd-jw-ethos-grid-82 {
+    gap: 13px;
+}
+.zd-jw-ethos-sub-81 {
+    margin-bottom: -25px;
+}
+h2.zd-jw-neck-title-90 {
+    font-size: 29px;
+}
+.zd-jw-banner-title-96 {
+    font-size: 32px;
+}
+.zd-jw-story-sec-99, .zd-jw-gift-sec-120 {
+    padding: 60px 24px;
+    max-width: 100%;
+}
+.zd-jw-story-grid-100 {
+    grid: none;
+}
+p.zd-jw-story-desc-106 {
+    width: 100%;
+    font-size: 15px;
+}
+.zd-jw-story-right-103 {
+    margin-top: 31px;
+}
+.zd-jw-story-sec-99, .zd-jw-gift-sec-120 {
+    padding: 60px 20px;
+}
+.zd-jw-story-btns-107 {
+    display: inline-grid;
+    gap: 16px;
+}
+.zd-jw-story-btn1-108, .zd-jw-gift-btn-126 {
+    padding: 16px 35px;
+    font-size: 12px;
+}
+.zd-jw-story-btn2-109 {
+    padding: 16px 35px;
+    font-size: 12px;
+    text-align: center;
+}
+.zd-jw-promise-title-113 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+.zd-jw-promise-cardtitle-118 {font-size: 19px;}
+.zd-jw-promise-carddesc-119 {
+    font-size: 14px;
+}
+.zd-jw-promise-sec-110 {
+    padding: 60px 20px;
+}
+.zd-jw-promise-sub-114 {
+    font-size: 15px;
+    width: 90%;
+    justify-self: anchor-center;
+}
+section.zd-jw-gift-sec-120 {
+    padding: 60px 0px 0px 0px;
+}
+.zd-jw-story-title-105, .zd-jw-gift-title-124 {
+    font-size: 32px;
+    margin: 12px 0 16px 0;
+}
+.zd-jw-insta-sec-129 {
+    padding: 60px 20px;
+    margin: 0px auto;
+}
+.zd-jw-salon-wrap-138 {
+    gap: 13px;
+}
+.zd-jw-salon-title-143 {
+    font-size: 32px;
+}
+img.zd-jw-gift-img-128 {
+    height: 280px;
+}
+.zd-jw-gift-left-122 {
+    padding: 0px 15px;
+}
+.zd-jw-salon-btns-147 {
+    text-align: center;
+}
+
+}

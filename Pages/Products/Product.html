@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pear Halo Engagement Ring - Zaidi</title>
+
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="../../Header/Header.css" />
+    <link rel="stylesheet" href="../../Footer/Footer.css" />
+    
+    <!-- CSS Path: 2 folders peeche ja kar Product.css load karein -->
+    <link rel="stylesheet" href="Product.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Automatically Load Hoga (JS ke zariye) -->
+    <div id="header-placeholder"></div>
+
+    <main class="product-page-container">
+        
+        <!-- Breadcrumbs -->
+        <!-- Root folder mein jaane ke liye ../.. use kiya hai -->
+        <nav class="breadcrumbs">
+            <a href="../../index.html">Home</a> 
+            <span class="divider">/</span> 
+            <a href="../Collection/Collection.html">Engagement</a> 
+            <span class="divider">/</span> 
+            <span class="current">Pear Halo Engagement Ring</span>
+        </nav>
+
+        <div class="product-layout">
+            
+            <!-- LEFT SIDE: Images -->
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="mainImg" src="https://via.placeholder.com/600x600/f5f5f5/333333?text=Main+Ring+Image" alt="Pear Halo Engagement Ring">
+                </div>
+                <div class="thumbnail-grid">
+                    <img class="thumb active" src="https://via.placeholder.com/150x150/f5f5f5/333333?text=Thumb+1" onclick="changeImage(this, 'https://via.placeholder.com/600x600/f5f5f5/333333?text=Main+Ring+Image')" alt="Thumb 1">
+                    <img class="thumb" src="https://via.placeholder.com/150x150/f5f5f5/333333?text=Thumb+2" onclick="changeImage(this, 'https://via.placeholder.com/600x600/f5f5f5/333333?text=Ring+Side+View')" alt="Thumb 2">
+                    <img class="thumb" src="https://via.placeholder.com/150x150/f5f5f5/333333?text=Thumb+3" onclick="changeImage(this, 'https://via.placeholder.com/600x600/f5f5f5/333333?text=Ring+Top+View')" alt="Thumb 3">
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Product Details -->
+            <div class="product-details">
+                <p class="brand">ZAIDI</p>
+                <h1 class="product-title">Pear Halo Engagement Ring</h1>
+                
+                <p class="price" id="productPrice">$1,180</p>
+                <p class="payment-info"><span style="color: #D0A648;"><strong>TBC</strong></span> - Monthly payment options depend on the finance provider and are not yet confirmed.</p>
+
+                <hr class="divider-line">
+
+                <!-- Metal Swatches -->
+                <div class="option-group">
+                    <p class="option-label">METAL: <span id="metalName">14k yellow gold</span></p>
+                    <div class="swatches" id="metalSwatches">
+                        <button class="swatch active" data-name="14k yellow gold" data-price="0" style="background-color: #e5c07b;"></button>
+                        <button class="swatch" data-name="14k white gold" data-price="50" style="background-color: #e0e0e0;"></button>
+                        <button class="swatch" data-name="14k rose gold" data-price="50" style="background-color: #e6a8a8;"></button>
+                        <button class="swatch" data-name="Platinum" data-price="300" style="background-color: #d1d5db;"></button>
+                    </div>
+                </div>
+
+                <hr class="divider-line">
+
+                <!-- Diamond Type -->
+                <div class="option-group">
+                    <p class="option-label">DIAMOND TYPE: <span id="diamondTypeName">Lab-grown</span></p>
+                    <div class="button-group" id="diamondTypeGroup">
+                        <button class="btn-option" data-name="Natural" data-price="500">Natural</button>
+                        <button class="btn-option active" data-name="Lab-grown" data-price="0">Lab-grown</button>
+                    </div>
+                </div>
+
+                <!-- Lab-Grown Type -->
+                <div class="option-group mt-3" id="labGrownTypeGroup">
+                    <p class="option-label">LAB-GROWN TYPE: <span id="labGrownName">Lightworks</span></p>
+                    <div class="button-group">
+                        <button class="btn-option" data-name="Regular lab-grown" data-price="-100">Regular lab-grown</button>
+                        <button class="btn-option active" data-name="Lightworks" data-price="0">Lightworks</button>
+                    </div>
+                </div>
+
+                <!-- Lightworks Info Box -->
+                <div class="info-box">
+                    <p class="info-box-title">LIGHTWORKS SELECTED</p>
+                    <p class="info-box-desc">See how this diamond performs in motion and review the light-performance information available for it.</p>
+                    <div class="info-links">
+                        <a href="#"><i class="fa-solid fa-play"></i> View this stone in motion</a>
+                        <a href="#"><i class="fa-solid fa-chart-simple"></i> Performance data</a>
+                        <a href="#"><i class="fa-solid fa-check"></i> Why Lightworks?</a>
+                    </div>
+                </div>
+
+                <!-- Center Stone -->
+                <div class="option-group">
+                    <p class="option-label">CENTER STONE: <span id="centerStoneName">1.50ct</span></p>
+                    <div class="button-group" id="centerStoneGroup">
+                        <button class="btn-option" data-name="1.00ct" data-price="-400">1.00ct</button>
+                        <button class="btn-option active" data-name="1.50ct" data-price="0">1.50ct</button>
+                        <button class="btn-option" data-name="2.00ct" data-price="600">2.00ct</button>
+                        <button class="btn-option" data-name="Choose a specific stone" data-price="0">Choose a specific stone</button>
+                    </div>
+                </div>
+
+                <hr class="divider-line">
+
+                <!-- Ring Size -->
+                <div class="option-group">
+                    <p class="option-label">RING SIZE: <span id="ringSizeName">6</span></p>
+                    <div class="button-group" id="ringSizeGroup">
+                        <button class="btn-option active" data-name="6">6</button>
+                        <button class="btn-option" data-name="6.5">6.5</button>
+                        <button class="btn-option" data-name="7">7</button>
+                        <button class="btn-option" data-name="I don't know yet">I don't know yet</button>
+                    </div>
+                    <a href="#" class="link-underline">FIND MY SIZE</a>
+                </div>
+
+                <hr class="divider-line">
+
+                <!-- Engraving -->
+                <div class="option-group">
+                    <p class="option-label">ENGRAVING</p>
+                    <p class="text-muted">Available inside the band. TBC - Character limit and pricing to be confirmed.</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-add-to-bag">ADD TO BAG</button>
+                    <button class="btn-customize">CUSTOMIZE THIS DESIGN</button>
+                </div>
+                <p class="text-muted mt-2"><span style="color: #D0A648;"><strong>TBC</strong></span> - Production and delivery timelines are not yet confirmed and will render from product data.</p>
+
+                <!-- Jeweler Review Box -->
+                <div class="dark-box">
+                    <h3>Want a second opinion before you buy?</h3>
+                    <p>A Zaidi jeweler will look at this stone and setting together and reply to you.</p>
+                    <button class="btn-outline-light">REQUEST A JEWELER REVIEW</button>
+                </div>
+
+                <!-- Included Box -->
+                <div class="included-box">
+                    <h4>Included with this design</h4>
+                    <ul>
+                        <li>Certificate for the center diamond</li>
+                        <li>Insured delivery, or collect in Carmel</li>
+                        <li>Appraisal — <span style="color: #D0A648;"><strong>TBC</strong></span> - eligibility</li>
+                        <li>Cleaning and inspection — <span style="color: #D0A648;"><strong>TBC</strong></span> - terms</li>
+                        <li>Resizing — <span style="color: #D0A648;"><strong>TBC</strong></span> - range per design</li>
+                        <li>Returns — <span style="color: #D0A648;"><strong>TBC</strong></span> - window and custom-order terms</li>
+                    </ul>
+                    <p class="text-muted small">Rendered from this product's own data. Nothing appears that does not apply to this configuration.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BOTTOM SECTION: ABOUT & DETAILS -->
+        <div class="product-bottom-section">
+            
+            <!-- LEFT SIDE: About this design -->
+            <div class="about-design-column">
+                <h2 class="section-title">About this design</h2>
+                
+                <div class="design-feature">
+                    <h3>An open four prong setting</h3>
+                    <p>Keeps the pear outline visually unobstructed from above.</p>
+                </div>
+                
+                <div class="design-feature">
+                    <h3>A refined band</h3>
+                    <p>Keeps attention on the center stone rather than competing with it.</p>
+                </div>
+                
+                <div class="design-feature">
+                    <h3>A halo of round accents</h3>
+                    <p>Adds visual width around the center stone. Accent count and total weight are listed in the specifications.</p>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Details Accordions -->
+            <div class="details-column">
+                <h2 class="section-title">Details</h2>
+                
+                <div class="accordion-wrapper">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Specifications</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Detailed specifications of the ring will go here. (Demo Content)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>The diamond and its certificate</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Information about the diamond certificate. (Demo Content)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Sizing and fit</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Sizing guide and fit details. (Demo Content)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Delivery and collection</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Delivery options and collection information. (Demo Content)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Returns and custom-order terms</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Return policy and custom order terms. (Demo Content)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Warranty, care and insurance</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Warranty details, care instructions, and insurance info. (Demo Content)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Financing</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Financing options available. (Demo Content)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Automatically Load Hoga -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Shared Component Loader -->
+    <script src="../../router.js"></script>
+
+    <!-- JS Path: Isi folder mein Product.js load karein -->
+    <script src="Product.js"></script>
+</body>
+</html>

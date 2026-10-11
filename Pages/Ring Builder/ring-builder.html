@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Builder - Zaidi Jewelers</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="../../Header/Header.css" />
+    <link rel="stylesheet" href="../../Footer/Footer.css" />
+    
+    <!-- Ring Builder CSS -->
+    <link rel="stylesheet" href="ring-builder.css">
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main class="rb-page-wrapper">
+        
+        <!-- LEFT SIDEBAR: Selected Ring Summary -->
+        <aside class="rb-sidebar">
+            <div class="rb-step-badge">
+                <span>STEP 1 COMPLETE</span>
+                <span class="material-symbols-outlined rb-check-icon">check_circle</span>
+            </div>
+
+            <div class="rb-ring-preview">
+                <!-- Yahan ring ki image aayegi (demo placeholder) -->
+                <div class="rb-ring-image-box">
+                    <img id="rbRingImage" src="/Assets/Rings.png" alt="Selected Ring">
+                </div>
+            </div>
+
+            <div class="rb-ring-info">
+                <h2 id="rbRingTitle">Cecilia Halo, Oval</h2>
+                <p id="rbRingMetal">14K Yellow Gold · Pavé Gallery</p>
+            </div>
+
+            <div class="rb-setting-price-row">
+                <div>
+                    <span class="rb-label-small">SETTING ONLY</span>
+                    <div class="rb-price-tag" id="rbSettingPrice">$800</div>
+                </div>
+                <a href="#" class="rb-change-link">CHANGE SETTING</a>
+            </div>
+
+            <div class="rb-atelier-note">
+                <div class="rb-note-icon">
+                    <span class="material-symbols-outlined">diamond</span>
+                </div>
+                <div>
+                    <h4>CARMEL ATELIER STANDARD</h4>
+                    <p>All Zaidi diamonds are certified lab-grown, ethically created with zero carbon footprint, and independently inspected in our Carmel atelier.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT SIDE: Diamond Selection Area -->
+        <section class="rb-main-content">
+
+            <!-- Step 1: Filters -->
+            <div class="rb-filters-section">
+                <div class="rb-section-header">
+                    <span class="rb-step-title">1. SELECT DIAMOND SHAPE</span>
+                    <span class="rb-selected-shape-label">Selected: <strong id="rbSelectedShapeText">Oval</strong></span>
+                </div>
+
+                <!-- Shape Buttons -->
+                <div class="rb-shape-grid" id="rbShapeGrid">
+                    <!-- JS will inject shapes here -->
+                </div>
+
+                <!-- Advanced Filters -->
+                <div class="rb-advanced-filters">
+                    
+                    <!-- Carat -->
+                    <div class="rb-filter-control">
+                        <div class="rb-filter-label-row">
+                            <span class="rb-filter-label">CARAT</span>
+                            <span class="rb-filter-value" id="rbCaratValue">1.00ct – 2.50ct</span>
+                        </div>
+                        <input type="range" class="rb-range-slider" id="rbCaratSlider" min="0.5" max="3.0" step="0.1" value="1.0">
+                        <div class="rb-range-labels">
+                            <span>0.5ct</span><span>1.75ct</span><span>3.0ct+</span>
+                        </div>
+                    </div>
+
+                    <!-- Colour -->
+                    <div class="rb-filter-control">
+                        <div class="rb-filter-label-row">
+                            <span class="rb-filter-label">COLOUR</span>
+                            <span class="rb-filter-value" id="rbColourValue">D – H (Colorless)</span>
+                        </div>
+                        <input type="range" class="rb-range-slider" id="rbColourSlider" min="0" max="5" step="1" value="3">
+                        <div class="rb-range-labels">
+                            <span>D</span><span>E</span><span>F</span><span>G</span><span>H</span>
+                        </div>
+                    </div>
+
+                    <!-- Clarity -->
+                    <div class="rb-filter-control">
+                        <div class="rb-filter-label-row">
+                            <span class="rb-filter-label">CLARITY</span>
+                            <span class="rb-filter-value" id="rbClarityValue">VVS1 – SI1</span>
+                        </div>
+                        <input type="range" class="rb-range-slider" id="rbClaritySlider" min="0" max="4" step="1" value="2">
+                        <div class="rb-range-labels">
+                            <span>FL</span><span>VVS1</span><span>VS1</span><span>SI1</span>
+                        </div>
+                    </div>
+
+                    <!-- Cut Grade -->
+                    <div class="rb-filter-control">
+                        <span class="rb-filter-label">CUT GRADE</span>
+                        <div class="rb-button-group" id="rbCutGroup">
+                            <button class="rb-btn-option active" data-value="Ideal">IDEAL</button>
+                            <button class="rb-btn-option" data-value="Excellent">EXCELLENT</button>
+                            <button class="rb-btn-option" data-value="Very Good">VERY GOOD</button>
+                        </div>
+                    </div>
+
+                    <!-- Certificate -->
+                    <div class="rb-filter-control">
+                        <span class="rb-filter-label">CERTIFICATE</span>
+                        <div class="rb-button-group" id="rbCertGroup">
+                            <button class="rb-btn-option active" data-value="IGI">IGI</button>
+                            <button class="rb-btn-option" data-value="GCAL">GCAL</button>
+                            <button class="rb-btn-option" data-value="GIA">GIA</button>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="rb-filter-control">
+                        <div class="rb-filter-label-row">
+                            <span class="rb-filter-label">PRICE</span>
+                            <span class="rb-filter-value" id="rbPriceValue">$1,000 – $6,000</span>
+                        </div>
+                        <input type="range" class="rb-range-slider" id="rbPriceSlider" min="500" max="10000" step="100" value="6000">
+                        <div class="rb-range-labels">
+                            <span>$1K</span><span>$3.5K</span><span>$6K</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Step 2: Diamond List -->
+            <div class="rb-list-section">
+                <div class="rb-list-header">
+                    <h2><span id="rbResultCount">112</span> diamonds matching your criteria</h2>
+                    <div class="rb-sort-wrapper">
+                        <label>SORT BY:</label>
+                        <select id="rbSortSelect" class="rb-sort-select">
+                            <option value="price-low">PRICE: LOW TO HIGH</option>
+                            <option value="price-high">PRICE: HIGH TO LOW</option>
+                            <option value="carat-low">CARAT: LOW TO HIGH</option>
+                            <option value="carat-high">CARAT: HIGH TO LOW</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Table Header -->
+                <div class="rb-table-header">
+                    <span></span> <!-- Icon -->
+                    <span>SHAPE</span>
+                    <span>CARAT</span>
+                    <span>COLOUR</span>
+                    <span>CLARITY</span>
+                    <span>CUT</span>
+                    <span>LAB</span>
+                    <span>PRICE</span>
+                    <span>ACTION</span>
+                </div>
+
+                <!-- Diamond List Container -->
+                <div class="rb-diamond-list" id="rbDiamondList">
+                    <!-- JS will inject diamond rows here -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="rb-pagination">
+                    <span id="rbShowingText">Showing 1 – 8 of 142 Certified Diamonds</span>
+                    <div class="rb-page-numbers" id="rbPageNumbers">
+                        <!-- JS will inject page numbers -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Selected Diamond Detail -->
+            <div class="rb-detail-section" id="rbDetailSection" style="display: none;">
+                <div class="rb-detail-grid">
+                    
+                    <!-- Left: Image -->
+                    <div class="rb-detail-image-box">
+                        <div class="rb-image-badges">
+                            <span>360° HD INSPECTION · 40X MAGNIFICATION</span>
+                            <span class="rb-cert-badge"><span class="rb-dot"></span> ATELIER CERTIFIED</span>
+                        </div>
+                        <div class="rb-detail-img-wrap">
+                            <img id="rbDetailImage" src="" alt="Selected Diamond">
+                        </div>
+                        <div class="rb-image-footer">
+                            <span>ROTATE TO INSPECT FACETS</span>
+                            <span>LASER INSCRIPTION: <span id="rbLaserInscription">LG-584029918</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Info -->
+                    <div class="rb-detail-info">
+                        <div class="rb-detail-header">
+                            <span class="rb-detail-type" id="rbDetailType">CERTIFIED TYPE IIA LAB-GROWN</span>
+                            <span class="rb-detail-sku" id="rbDetailSku">SKU: ZD-152-OV-889</span>
+                        </div>
+                        
+                        <h2 class="rb-detail-title" id="rbDetailTitle">1.52 CARAT OVAL LAB GROWN DIAMOND</h2>
+                        
+                        <div class="rb-report-box">
+                            <div class="rb-report-icon"><span class="material-symbols-outlined">description</span></div>
+                            <div class="rb-report-info">
+                                <span>IGI REPORT <span id="rbReportNumber">LG-584029918</span></span>
+                                <span>Laser Inscribed Girdle · Zero Fluorescence</span>
+                            </div>
+                            <button class="rb-view-pdf-btn">VIEW PDF</button>
+                        </div>
+
+                        <div class="rb-specs-grid">
+                            <div class="rb-spec-item">
+                                <span class="rb-spec-label">Measurements</span>
+                                <span class="rb-spec-value" id="rbSpecMeasure">9.82 × 7.14 × 4.42 mm</span>
+                            </div>
+                            <div class="rb-spec-item">
+                                <span class="rb-spec-label">L/W Ratio</span>
+                                <span class="rb-spec-value" id="rbSpecRatio">1.38 (Optimal Graceful Oval)</span>
+                            </div>
+                            <div class="rb-spec-item">
+                                <span class="rb-spec-label">Table Percentage</span>
+                                <span class="rb-spec-value" id="rbSpecTable">62.5%</span>
+                            </div>
+                            <div class="rb-spec-item">
+                                <span class="rb-spec-label">Total Depth</span>
+                                <span class="rb-spec-value" id="rbSpecDepth">61.9%</span>
+                            </div>
+                            <div class="rb-spec-item">
+                                <span class="rb-spec-label">Polish / Symmetry</span>
+                                <span class="rb-spec-value" id="rbSpecPolish">Excellent / Excellent</span>
+                            </div>
+                            <div class="rb-spec-item">
+                                <span class="rb-spec-label">Fluorescence</span>
+                                <span class="rb-spec-value" id="rbSpecFluor">None</span>
+                            </div>
+                        </div>
+
+                        <div class="rb-gemmologist-note">
+                            <span class="rb-note-title">CARMEL GEMMOLOGIST REMARK</span>
+                            <p id="rbSpecRemark">"Exceptional optical fire, zero bow-tie effect, and crisp facet symmetry. Matches ideally with the Cecilia oval halo setting."</p>
+                        </div>
+
+                        <div class="rb-detail-footer">
+                            <div>
+                                <span class="rb-label-small">DIAMOND PRICE</span>
+                                <div class="rb-price-large" id="rbDetailPrice">$3,180</div>
+                            </div>
+                            <button class="rb-select-diamond-btn" id="rbSelectDiamondBtn">SELECT THIS DIAMOND</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Shared Component Loader -->
+    <script src="../../router.js"></script>
+
+    <!-- Ring Builder JS -->
+    <script src="ring-builder.js"></script>
+</body>
+</html>

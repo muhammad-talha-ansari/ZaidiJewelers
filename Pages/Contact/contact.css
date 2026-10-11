@@ -1,0 +1,461 @@
+/* =========================================
+   ROOT VARIABLES
+   ========================================= */
+:root {
+    --ct-bg-dark: #0A2422;
+    --ct-bg-cream: #FBF9F4;
+    --ct-bg-sand: #F5F3EE;
+    --ct-gold: #D0A648;
+    --ct-gold-hover: #B08A32;
+    --ct-text-dark: #1B1C19;
+    --ct-text-muted: #727877;
+    --ct-border: #E0DFDB;
+    --ct-white: #ffffff;
+    --ct-font-serif: 'Bodoni Moda', serif;
+    --ct-font-sans: 'Manrope', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ct-font-sans);
+    color: var(--ct-text-dark);
+    background-color: var(--ct-white);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.ct-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 0px;
+}
+
+/* =========================================
+   SECTION 1: HERO
+   ========================================= */
+.ct-hero-section {
+    background-color: #123A36;
+    color: var(--ct-white);
+    padding: 60px 20px 60px;
+    text-align: center;
+}
+
+.ct-hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ct-breadcrumb {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--ct-gold);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.ct-breadcrumb a {
+    color: #a0a0a0;
+    transition: color 0.3s;
+}
+
+.ct-breadcrumb a:hover {
+    color: var(--ct-gold);
+}
+
+.ct-hero-title {
+    font-family: var(--ct-font-serif);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.ct-hero-desc {
+    font-size: 15px;
+    color: #cccccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   SECTION 2: CONTACT INFO & FORM
+   ========================================= */
+.ct-main-section {
+    padding: 80px 0;
+    background-color: var(--ct-bg-cream);
+}
+
+.ct-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: flex-start;
+}
+
+.ct-section-title {
+    font-family: var(--ct-font-serif);
+    font-size: 33px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.ct-section-desc {
+    font-size: 15px;
+    color: var(--ct-text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Info List */
+.ct-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.ct-info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.ct-info-icon {
+    color: var(--ct-gold);
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+.ct-info-item h4 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ct-text-dark);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.ct-info-item p {
+    font-size: 14px;
+    color: var(--ct-text-muted);
+    line-height: 1.6;
+}
+
+.ct-info-item a {
+    color: var(--ct-text-muted);
+    transition: color 0.3s;
+}
+
+.ct-info-item a:hover {
+    color: var(--ct-gold);
+}
+
+/* Social Media Icons */
+.ct-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--ct-border);
+    width: 80%;
+}
+
+.ct-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--ct-white);
+    border: 1px solid var(--ct-border);
+    color: var(--ct-text-dark);
+    transition: all 0.3s ease;
+}
+
+.ct-social-icons a:hover {
+    background-color: var(--ct-gold);
+    border-color: var(--ct-gold);
+    color: var(--ct-bg-dark);
+    transform: translateY(-3px);
+}
+
+/* Form Box */
+.ct-form-box {
+    background-color: var(--ct-white);
+    border: 1px solid var(--ct-border);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.ct-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ct-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ct-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ct-form-group label {
+    font-size: 13px;
+    color: var(--ct-text-dark);
+    font-weight: 500;
+}
+
+.ct-req {
+    color: #c5221f;
+}
+
+.ct-form-group input,
+.ct-form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--ct-border);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--ct-font-sans);
+    background-color: var(--ct-white);
+    transition: border 0.2s;
+    resize: vertical;
+}
+
+.ct-form-group input:focus,
+.ct-form-group textarea:focus {
+    outline: none;
+    border-color: var(--ct-gold);
+}
+
+.ct-submit-btn {
+    background-color: var(--ct-gold);
+    color: var(--ct-bg-dark);
+    border: 1px solid var(--ct-gold);
+    padding: 16px 32px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--ct-font-sans);
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.ct-submit-btn:hover {
+    background-color: transparent;
+    color: var(--ct-bg-dark);
+    border-color: var(--ct-bg-dark);
+}
+
+/* Success Message */
+.ct-success-msg {
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.ct-success-msg .material-symbols-outlined {
+    font-size: 48px;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.ct-success-msg h3 {
+    font-family: var(--ct-font-serif);
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1B1C19;
+}
+
+.ct-success-msg p {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* =========================================
+   SECTION 3: BESPOKE ATELIER BANNER
+   ========================================= */
+.ct-bespoke-section {
+    background-color: #08221e; /* Dark green background from your theme */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.ct-bespoke-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.ct-bespoke-content {
+    padding: 80px 60px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ct-bespoke-tag {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #D0A648; /* Gold */
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.ct-bespoke-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.ct-bespoke-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.ct-bespoke-btn {
+    display: inline-block;
+    background-color: #D0A648; /* Gold */
+    color: #08221e; /* Dark green */
+    padding: 16px 32px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    transition: all 0.3s ease;
+    border: 1px solid #D0A648;
+}
+
+.ct-bespoke-btn:hover {
+    background-color: transparent;
+    color: #D0A648;
+    border: 1px solid #D0A648;
+}
+
+.ct-bespoke-image {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.ct-bespoke-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================
+   RESPONSIVE: BESPOKE SECTION
+   ========================================= */
+@media (max-width: 1024px) {
+    .ct-bespoke-content {
+        padding: 60px 40px;
+    }
+    
+    .ct-bespoke-title {
+        font-size: 36px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 992px) {
+    .ct-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .ct-hero-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ct-hero-section {
+        padding: 50px 15px 50px;
+    }
+    
+    .ct-hero-title {
+        font-size: 30px;
+    }
+    
+    .ct-main-section {
+        padding: 50px 15px;
+    }
+    
+    .ct-form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .ct-section-title {
+        font-size: 28px;
+    }
+
+    .ct-form-box {
+        padding: 25px;
+    }
+
+        .ct-bespoke-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ct-bespoke-content {
+        padding: 50px 25px;
+        order: 2; /* Content neeche aayega mobile par */
+    }
+
+    .ct-bespoke-image {
+        order: 1; /* Image upar aayegi mobile par */
+        min-height: 300px;
+    }
+
+    .ct-bespoke-title {
+        font-size: 30px;
+    }
+
+    .ct-bespoke-desc {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .ct-bespoke-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+}
+

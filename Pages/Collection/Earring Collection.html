@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earrings - Zaidi Jewelers</title>
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Shared Header & Footer CSS -->
+  <link rel="stylesheet" href="../../Header/Header.css" />
+  <link rel="stylesheet" href="../../Footer/Footer.css" />
+
+  <!-- Collection Page CSS -->
+  <link rel="stylesheet" href="Earring Collection.css" />
+</head>
+<body>
+
+  <!-- Dynamic Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="zj-collection-page">
+
+    <!-- Hero Header Section -->
+    <section class="zj-collection-hero">
+      <div class="zj-container">
+        <nav class="zj-breadcrumb">
+          <a href="#">Jewelry</a> / <span>Earrings</span>
+        </nav>
+        <div class="zj-hero-content">
+          <div class="zj-hero-text">
+            <h1 class="zj-collection-title">Earrings</h1>
+            <p class="zj-collection-desc">
+              From classic studs to statement drops. Zaidi earrings feature certified natural or lab-grown diamonds, crafted with precision in Carmel.
+            </p>
+          </div>
+          <div class="zj-hero-action">
+            <button class="zj-btn-outline">ASK A ZAIDI JEWELER</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Bar (Mobile Filter Button & Desktop Sort) -->
+    <section class="zj-controls-bar">
+      <div class="zj-container zj-controls-flex">
+        <!-- Mobile Trigger Button -->
+        <button id="zjMobileFilterBtn" class="zj-filter-toggle-btn">
+          <span class="material-symbols-outlined">tune</span>
+          Filter
+        </button>
+
+        <!-- Active Filter Tags (Desktop View) -->
+        <div class="zj-active-filters-bar">
+          <span class="zj-filter-label">FILTER</span>
+          <span class="zj-found-count" id="zjFoundCount">0 Products Found</span>
+          <div class="zj-filter-tags" id="zjActiveTags">
+            <!-- JS yahan active tags banayega -->
+          </div>
+        </div>
+
+        <!-- Sort Selector -->
+        <div class="zj-sort-wrapper">
+          <select id="zjSortSelect" class="zj-sort-dropdown">
+            <option value="best-selling">Best Selling</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest Arrivals</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Grid (Sidebar + Product Grid) -->
+    <section class="zj-collection-content">
+      <div class="zj-container zj-grid-layout">
+
+        <!-- Filter Overlay (Mobile Backdrop) -->
+        <div id="zjFilterOverlay" class="zj-filter-overlay"></div>
+
+        <!-- Filter Sidebar / Mobile Drawer -->
+        <aside id="zjFilterDrawer" class="zj-filter-sidebar">
+
+          <!-- Mobile Drawer Header -->
+          <div class="zj-drawer-header">
+            <h3>Filter Products</h3>
+            <button id="zjCloseFilterBtn" class="zj-close-drawer-btn" aria-label="Close Filter">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <div class="zj-filter-groups">
+            <!-- Brand Filter -->
+            <div class="zj-filter-group">
+              <h4 class="zj-filter-heading">BRAND</h4>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="brand" value="Zaidi"> Zaidi
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="brand" value="CoStar"> CoStar
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="brand" value="Rosario Navia"> Rosario Navia
+              </label>
+            </div>
+
+            <!-- Diamond Type -->
+            <div class="zj-filter-group">
+              <h4 class="zj-filter-heading">DIAMOND TYPE</h4>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="diamond" value="Natural"> Natural
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="diamond" value="Lab-grown"> Lab-grown
+              </label>
+            </div>
+
+            <!-- Style Filter (Earrings ke liye) -->
+            <div class="zj-filter-group">
+              <h4 class="zj-filter-heading">STYLE</h4>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="style" value="Stud"> Stud
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="style" value="Hoop"> Hoop
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="style" value="Drop"> Drop
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="style" value="Huggie"> Huggie
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="style" value="Cluster"> Cluster
+              </label>
+            </div>
+
+            <!-- Closure Filter (Earrings ke liye) -->
+            <div class="zj-filter-group">
+              <h4 class="zj-filter-heading">CLOSURE</h4>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="closure" value="Push Back"> Push Back
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="closure" value="Screw Back"> Screw Back
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="closure" value="Lever Back"> Lever Back
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="closure" value="Hinged Snap"> Hinged Snap
+              </label>
+            </div>
+
+            <!-- Metal Filter -->
+            <div class="zj-filter-group">
+              <h4 class="zj-filter-heading">METAL</h4>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="metal" value="14k yellow gold"> 14k yellow gold
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="metal" value="14k white gold"> 14k white gold
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="metal" value="14k rose gold"> 14k rose gold
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="metal" value="Platinum"> Platinum
+              </label>
+            </div>
+
+            <!-- Availability -->
+            <div class="zj-filter-group">
+              <h4 class="zj-filter-heading">AVAILABILITY</h4>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="availability" value="Ready to ship"> Ready to ship
+              </label>
+              <label class="zj-checkbox-label">
+                <input type="checkbox" class="zj-filter-check" data-group="availability" value="Made to order"> Made to order
+              </label>
+            </div>
+
+            <p class="zj-filter-note">
+              Seven distinct photographs, seven distinct products. Metal swatches appear only on configurable Zaidi designs.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Product Grid Area -->
+        <div class="zj-product-grid-container">
+          <!-- Yahan href nahi hoga, kyunki JS dynamically link banayega -->
+          <div id="zjProductGrid" class="zj-product-grid">
+            <!-- Dynamic Products Injected Via JavaScript -->
+          </div>
+
+          <!-- Pagination / Load More -->
+          <div class="zj-load-more-section">
+            <p class="zj-showing-count">Showing <span id="zjCurrentCount">0</span> of <span id="zjTotalCount">0</span> earrings</p>
+            <div class="zj-progress-bar"><div class="zj-progress-fill"></div></div>
+            <button id="zjLoadMoreBtn" class="zj-btn-outline">LOAD MORE</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bespoke Banner Section -->
+    <section class="zj-bespoke-banner">
+      <div class="zj-bespoke-grid">
+        <div class="zj-bespoke-card">
+          <span class="zj-subtitle">BESPOKE ATELIER</span>
+          <h2>Can't decide? Design your own.</h2>
+          <p>
+            Select your certified lab-grown diamond, choose your setting, and watch your earrings come to life in Carmel. Direct guidance with master jewelers.
+          </p>
+          <a href="../../Pages/Ring Builder/ring-builder.html" class="zj-btn-gold">OPEN THE DESIGN BUILDER</a>
+        </div>
+        <div class="zj-bespoke-image">
+          <img src="/Assets/Bespoke Atelier Image.jpg" alt="Custom Jewelry Hand" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dynamic Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Shared Component Loader -->
+  <script src="../../router.js"></script>
+
+  <!-- Collection Page JS -->
+  <script src="Earring Collection.js"></script>
+</body>
+</html>

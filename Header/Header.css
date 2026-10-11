@@ -1,0 +1,688 @@
+/* ==========================================================================
+   ZAIDI JEWELERS - HEADER & SIDE PANEL STYLES
+   ========================================================================== */
+
+/* Color Tokens */
+:root {
+  --zj-dark-green: #0A2422;
+  --zj-darkest-green: #061815;
+  --zj-gold: #D0A648;
+  --zj-gold-hover: #B08A32;
+  --zj-light-gold: #E3C588;
+  --zj-ivory: #FBF9F4;
+  --zj-white: #FFFFFF;
+  --zj-border-color: rgba(211, 204, 187, 0.25);
+  
+  /* Mega Menu Reference Theme Colors */
+  --zj-mega-bg: #F9F8F3;
+  --zj-mega-text: #2C2B29;
+  --zj-mega-subtext: #8E8A81;
+  --zj-mega-border: #E8E5DC;
+  --zj-mega-accent-gold: #B68D40;
+}
+
+/* Base Adjustments */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--zj-ivory);
+}
+
+.zj-site-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--zj-dark-green);
+}
+
+/* 1. Announcement Bar */
+.zj-announcement-bar {
+  background-color: var(--zj-gold);
+  text-align: center;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--zj-border-color);
+}
+
+.zj-announcement-link {
+  color: var(--zj-darkest-green);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+span.zj-underline-text {
+    color: var(--zj-darkest-green);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.zj-announcement-link a {
+    text-decoration: none;
+}
+
+span.zj-underline-text:hover {
+  color: var(--zj-white);
+}
+
+/* 2. Main Top Row Header Container */
+.zj-main-header {
+  background-color: var(--zj-dark-green);
+  padding: 10px 24px;
+}
+
+.zj-header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Indicator */
+.zj-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 35%;
+}
+
+.zj-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--zj-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--zj-gold);
+}
+
+.zj-carmel-link {
+  color: var(--zj-light-gold);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.zj-carmel-link:hover {
+  color: var(--zj-ivory);
+}
+
+/* Logo */
+.zj-header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29%;
+}
+
+.zj-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Header Icons */
+.zj-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 35%;
+  justify-content: end;
+}
+
+.zj-icon-btn {
+  background: none;
+  border: none;
+  color: var(--zj-light-gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.zj-icon-btn:hover {
+  color: var(--zj-ivory);
+  transform: translateY(-1px);
+}
+
+.material-symbols-outlined {font-size: 23px; font-weight: 300;}
+
+.zj-hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--zj-ivory);
+  cursor: pointer;
+}
+
+/* 3. Bottom Desktop Navigation Bar */
+.zj-desktop-bottom-nav {
+  background-color: var(--zj-dark-green);
+  border-top: 1px solid #d4d4d454;
+  border-bottom: 1px solid #d4d4d454;
+  padding: 15px 0;
+  position: relative;
+}
+
+.zj-nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+}
+
+.zj-nav-item-has-mega {
+  position: static;
+}
+
+.zj-nav-link {
+  color: var(--zj-ivory);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+.zj-nav-link:hover,
+.zj-nav-link.zj-active {
+  color: var(--zj-gold);
+}
+
+.zj-nav-link.zj-active::after,
+.zj-nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--zj-gold);
+  transition: width 0.3s ease;
+}
+
+/* ==========================================================================
+   EXACT MATCH MEGA MENU STYLES
+   ========================================================================== */
+
+.zj-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--zj-mega-bg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid var(--zj-mega-border);
+  z-index: 999;
+  
+  /* Smooth Fade Up Animation */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+  pointer-events: none;
+}
+
+.zj-mega-menu.zj-mega-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.zj-mega-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Main 5-Column Grid */
+.zj-mega-content-grid {
+  display: grid;
+  grid-template-columns: 18% 26% 17% 16% 23%;
+  padding: 45px 50px 35px 50px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.zj-mega-col {
+  padding-right: 25px;
+  border-right: 1px solid var(--zj-mega-border);
+}
+
+.zj-mega-col:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.zj-mega-col:not(:first-child) {
+  padding-left: 25px;
+}
+
+/* Column Headings */
+.zj-mega-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  color: #1b1b1b;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* Col 1: Shop By Style */
+.zj-style-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.zj-style-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.zj-style-item:hover {
+  opacity: 0.75;
+}
+
+.zj-style-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--zj-mega-text);
+  line-height: 1.2;
+}
+
+.zj-style-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: var(--zj-mega-subtext);
+  margin-top: 2px;
+  font-weight: 300;
+}
+
+.zj-view-all-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--zj-mega-accent-gold);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.zj-view-all-link:hover {
+  color: #8C6A2A;
+}
+
+/* Col 2: Shop By Shape */
+.zj-shape-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 12px;
+}
+
+.zj-shape-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #333230;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.zj-shape-item:hover {
+  color: var(--zj-mega-accent-gold);
+}
+
+.zj-shape-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--zj-mega-accent-gold);
+}
+
+.zj-shape-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Col 3 & 4: Links & Metals */
+.zj-sub-heading {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--zj-mega-subtext);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.zj-mt-15 {
+  margin-top: 22px;
+}
+
+.zj-simple-link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zj-simple-link-group a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #333230;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.zj-simple-link-group a:hover {
+  color: var(--zj-mega-accent-gold);
+}
+
+/* Tone List */
+.zj-tone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.zj-tone-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #333230;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.zj-tone-item:hover {
+  color: var(--zj-mega-accent-gold);
+}
+
+.zj-tone-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Col 5: Featured Card */
+.zj-featured-card {
+  border: 1px solid #E1DCD0;
+  padding: 12px;
+  background-color: var(--zj-mega-bg);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.zj-card-img-wrap {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.zj-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.zj-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.zj-card-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222120;
+  margin-bottom: 6px;
+}
+
+.zj-card-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #6E6A61;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+.zj-card-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--zj-mega-accent-gold);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--zj-mega-accent-gold);
+  align-self: flex-start;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.zj-card-link:hover {
+  opacity: 0.7;
+}
+
+/* Bottom Bar */
+.zj-mega-bottom-bar {
+  background-color: #F3F1EA;
+  border-top: 1px solid var(--zj-mega-border);
+  text-align: center;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #55524B;
+}
+
+.zj-bottom-bar-link {
+  color: #33312D;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.zj-bottom-bar-link:hover {
+  color: var(--zj-mega-accent-gold);
+}
+
+.zj-bar-dot {
+  color: #A39F95;
+  font-weight: bold;
+}
+
+.zj-bottom-bar-text {
+  color: #66635B;
+  font-weight: 400;
+}
+
+
+/* ==========================================================================
+   4. MOBILE SIDE PANEL (DRAWER) STYLES
+   ========================================================================== */
+
+.zj-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(6, 24, 21, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.zj-drawer-overlay.zj-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.zj-mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  max-width: 80%;
+  height: 100vh;
+  background-color: var(--zj-white);
+  z-index: 1100;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.zj-mobile-drawer.zj-open {
+  transform: translateX(0);
+}
+
+/* Drawer Header */
+.zj-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid #EAE8E3;
+}
+
+.zj-drawer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--zj-dark-green);
+}
+
+.zj-drawer-close-btn {
+  background: none;
+  border: none;
+  color: #6E675B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.zj-drawer-close-btn:hover {
+  color: var(--zj-gold);
+}
+
+/* Drawer Menu List */
+.zj-drawer-menu {
+  list-style: none;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.zj-drawer-item {
+  border-bottom: 1px solid #F4F0E6;
+}
+
+.zj-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  color: var(--zj-dark-green);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.zj-drawer-link:hover {
+  color: var(--zj-gold);
+  background-color: #FBF9F4;
+  padding-left: 28px;
+}
+
+.zj-icon-link span {
+  font-size: 18px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .zj-main-header {
+    padding: 6px 16px;
+    border-bottom: 1px solid var(--zj-border-color);
+  }
+
+  .zj-desktop-bottom-nav,
+  .zj-header-left,
+  .zj-desktop-only {
+    display: none !important;
+  }
+
+  .zj-hamburger-btn {
+    display: flex;
+    align-items: center;
+    width: 35%;
+  }
+
+  .zj-logo-img {
+    height: 47px;
+  }
+
+  .zj-header-logo {
+    width: 30%;
+  }
+
+  .zj-header-actions {
+    width: 35%;
+  }
+}

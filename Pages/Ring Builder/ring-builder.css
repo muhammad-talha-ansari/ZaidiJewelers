@@ -1,0 +1,767 @@
+/* =========================================
+   ROOT VARIABLES
+   ========================================= */
+:root {
+    --rb-bg-dark: #0A2422;
+    --rb-bg-card: #FBF9F4;
+    --rb-bg-sand: #F5F3EE;
+    --rb-gold: #D0A648;
+    --rb-gold-hover: #B08A32;
+    --rb-text-dark: #1B1C19;
+    --rb-text-muted: #727877;
+    --rb-border: #E0DFDB;
+    --rb-white: #ffffff;
+    --rb-font-serif: 'Bodoni Moda', serif;
+    --rb-font-sans: 'Manrope', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--rb-font-sans);
+    color: var(--rb-text-dark);
+    background-color: var(--rb-bg-card);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* =========================================
+   PAGE LAYOUT
+   ========================================= */
+.rb-page-wrapper {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 30px 20px 80px;
+}
+
+/* =========================================
+   LEFT SIDEBAR
+   ========================================= */
+.rb-sidebar {
+    background-color: var(--rb-bg-card);
+    border: 1px solid var(--rb-border);
+    padding: 20px;
+    border-radius: 4px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.rb-step-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--rb-text-muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rb-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.rb-check-icon { color: var(--rb-gold); font-size: 18px; }
+
+.rb-ring-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--rb-white);
+    border: 1px solid var(--rb-border);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.rb-ring-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.rb-ring-info h2 {
+    font-family: var(--rb-font-serif);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.rb-ring-info p {
+    font-size: 12px;
+    color: var(--rb-text-muted);
+    margin-bottom: 15px;
+}
+
+.rb-setting-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--rb-border);
+    border-bottom: 1px solid var(--rb-border);
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+.rb-label-small {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--rb-text-muted);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.rb-price-tag {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.rb-change-link {
+    font-size: 11px;
+    text-decoration: underline;
+    color: var(--rb-text-dark);
+    font-weight: 600;
+}
+
+.rb-atelier-note {
+    display: flex;
+    gap: 10px;
+    background-color: var(--rb-bg-sand);
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--rb-text-muted);
+}
+
+.rb-note-icon .material-symbols-outlined {
+    color: var(--rb-gold);
+    font-size: 20px;
+}
+
+.rb-atelier-note h4 {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--rb-text-dark);
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   RIGHT MAIN CONTENT
+   ========================================= */
+.rb-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- STEP 1: Filters --- */
+.rb-filters-section {
+    background-color: var(--rb-bg-card);
+    padding: 25px;
+    border-radius: 4px;
+    border: 1px solid var(--rb-border);
+}
+
+.rb-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--rb-text-muted);
+}
+
+.rb-selected-shape-label strong {
+    color: var(--rb-text-dark);
+}
+
+.rb-shape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Shape Buttons with Images */
+.rb-shape-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 5px;
+    border: 1px solid var(--rb-border);
+    background: var(--rb-white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--rb-text-muted);
+    min-height: 80px;
+}
+
+.rb-shape-btn.active {
+    background-color: var(--rb-bg-dark);
+    color: var(--rb-white);
+    border-color: var(--rb-bg-dark);
+}
+
+.rb-shape-btn:hover:not(.active) {
+    border-color: var(--rb-gold);
+}
+
+/* Shape Image Styling */
+.rb-shape-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: invert(0); /* Default color */
+}
+
+/* Fallback icon agar image load na ho */
+.rb-shape-icon-fallback {
+    font-size: 20px;
+}
+
+.rb-shape-name {
+    font-size: 9px;
+    font-weight: 500;
+}
+
+/* Advanced Filters Grid */
+.rb-advanced-filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    border-top: 1px solid var(--rb-border);
+    padding-top: 25px;
+}
+
+.rb-filter-control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rb-filter-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--rb-text-muted);
+}
+
+.rb-filter-value {
+    color: var(--rb-text-dark);
+    font-weight: 600;
+}
+
+/* Range Slider Styling */
+.rb-range-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--rb-border);
+    outline: none;
+    border-radius: 2px;
+}
+
+.rb-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--rb-bg-dark);
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.rb-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--rb-text-muted);
+}
+
+/* Button Groups for Cut & Certificate */
+.rb-button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.rb-btn-option {
+    flex: 1;
+    padding: 10px 5px;
+    border: 1px solid var(--rb-border);
+    background: var(--rb-white);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--rb-font-sans);
+}
+
+.rb-btn-option.active {
+    background-color: var(--rb-bg-dark);
+    color: var(--rb-white);
+    border-color: var(--rb-bg-dark);
+}
+
+.rb-btn-option:hover:not(.active) {
+    border-color: var(--rb-gold);
+}
+
+/* --- STEP 2: Diamond List --- */
+.rb-list-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rb-list-header h2 {
+    font-family: var(--rb-font-serif);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.rb-sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--rb-text-muted);
+}
+
+.rb-sort-select {
+    padding: 8px 30px 8px 10px;
+    border: 1px solid var(--rb-border);
+    background-color: var(--rb-white);
+    font-size: 11px;
+    text-transform: uppercase;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231B1C19' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+/* Table */
+.rb-table-header {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 60px;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--rb-border);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--rb-text-muted);
+    text-align: left;
+}
+
+.rb-diamond-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 60px;
+    gap: 10px;
+    padding: 12px 15px;
+    align-items: center;
+    border-bottom: 1px solid var(--rb-border);
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 13px;
+}
+
+.rb-diamond-row:hover {
+    background-color: var(--rb-bg-card);
+}
+
+.rb-diamond-row.active {
+    background-color: var(--rb-bg-dark);
+    color: var(--rb-white);
+}
+
+.rb-diamond-row.active .rb-row-price,
+.rb-diamond-row.active .rb-row-lab {
+    color: var(--rb-white);
+}
+
+.rb-diamond-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.rb-row-price {
+    font-weight: 600;
+}
+
+.rb-row-action-btn {
+    padding: 5px 12px;
+    border: 1px solid var(--rb-border);
+    background: transparent;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.rb-diamond-row.active .rb-row-action-btn {
+    background-color: var(--rb-gold);
+    border-color: var(--rb-gold);
+    color: var(--rb-bg-dark);
+    font-weight: 600;
+}
+
+/* Pagination */
+.rb-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--rb-text-muted);
+}
+
+.rb-page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.rb-page-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--rb-border);
+    background: var(--rb-white);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.rb-page-btn.active {
+    background-color: var(--rb-bg-dark);
+    color: var(--rb-white);
+    border-color: var(--rb-bg-dark);
+}
+
+/* --- STEP 3: Detail Section --- */
+.rb-detail-section {
+    background-color: var(--rb-bg-card);
+    border: 1px solid var(--rb-border);
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.rb-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.rb-detail-image-box {
+    background-color: #0A0A0A;
+    border-radius: 4px;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.rb-image-badges {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.rb-cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--rb-gold);
+}
+
+.rb-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--rb-gold);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.rb-detail-img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin: 15px 0;
+}
+
+.rb-detail-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.rb-image-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: #aaa;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+}
+
+/* Detail Info */
+.rb-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rb-detail-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--rb-text-muted);
+    text-transform: uppercase;
+}
+
+.rb-detail-title {
+    font-family: var(--rb-font-serif);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.rb-report-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--rb-white);
+    border: 1px solid var(--rb-border);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.rb-report-icon .material-symbols-outlined {
+    font-size: 20px;
+    color: var(--rb-gold);
+}
+
+.rb-report-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+}
+
+.rb-report-info span:first-child {
+    font-weight: 600;
+}
+
+.rb-report-info span:last-child {
+    color: var(--rb-text-muted);
+    font-size: 10px;
+}
+
+.rb-view-pdf-btn {
+    background: none;
+    border: 1px solid var(--rb-border);
+    padding: 5px 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.rb-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    border-top: 1px solid var(--rb-border);
+    border-bottom: 1px solid var(--rb-border);
+    padding: 15px 0;
+}
+
+.rb-spec-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+}
+
+.rb-spec-label {
+    color: var(--rb-text-muted);
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+}
+
+.rb-spec-value {
+    font-weight: 500;
+}
+
+.rb-gemmologist-note {
+    background-color: var(--rb-bg-sand);
+    padding: 15px;
+    border-left: 3px solid var(--rb-gold);
+    border-radius: 2px;
+}
+
+.rb-note-title {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--rb-gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.rb-gemmologist-note p {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--rb-text-muted);
+    line-height: 1.5;
+}
+
+.rb-detail-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rb-price-large {
+    font-size: 28px;
+    font-weight: 500;
+    font-family: var(--rb-font-serif);
+}
+
+.rb-select-diamond-btn {
+    background-color: var(--rb-gold);
+    color: var(--rb-bg-dark);
+    border: none;
+    padding: 15px 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rb-select-diamond-btn:hover {
+    background-color: var(--rb-gold-hover);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+    .rb-page-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .rb-sidebar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .rb-ring-preview { width: 150px; height: 150px; margin-bottom: 0; }
+    .rb-ring-info { flex: 1; }
+    .rb-setting-price-row { flex: 1; border: none; padding: 0; margin: 0; }
+    .rb-atelier-note { display: none; } /* Hide on tablet */
+
+    .rb-advanced-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+    .rb-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .rb-advanced-filters {
+        grid-template-columns: 1fr;
+    }
+    .rb-table-header {
+        display: none; /* Hide header on mobile, show as cards */
+    }
+    .rb-diamond-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        position: relative;
+        padding: 15px;
+        border: 1px solid var(--rb-border);
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+    .rb-diamond-row .rb-row-action-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .rb-diamond-row > span:first-child {
+        display: none; /* Hide icon */
+    }
+    .rb-diamond-row span {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+    /* Add pseudo labels for mobile */
+    .rb-diamond-row span::before {
+        content: attr(data-label);
+        font-size: 9px;
+        color: var(--rb-text-muted);
+        text-transform: uppercase;
+        margin-right: 5px;
+    }
+    .rb-detail-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .rb-select-diamond-btn {
+        width: 100%;
+    }
+}

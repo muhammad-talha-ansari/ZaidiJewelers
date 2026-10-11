@@ -1,0 +1,684 @@
+/* =========================================
+   1. ROOT VARIABLES (Colors & Fonts)
+   ========================================= */
+:root {
+    /* Colors - Backgrounds */
+    --zd-jw-bg-dark-1: #0A2422;
+    --zd-jw-bg-card-2: #061815;
+    --zd-jw-bg-cream-3: #FBF9F4;
+    --zd-jw-bg-sand-4: #F5F3EE;
+
+    /* Colors - Accents (Gold) */
+    --zd-jw-gold-primary-5: #D0A648;
+    --zd-jw-gold-hover-6: #B08A32;
+    --zd-jw-gold-light-7: #E3C588;
+
+    /* Colors - Text */
+    --zd-jw-text-dark-8: #1B1C19;
+    --zd-jw-text-muted-9: #727877;
+    --zd-jw-text-light-10: #FBF9F4;
+    --zd-jw-text-green-11: #C3D2CF;
+
+    /* Colors - Borders */
+    --zd-jw-border-light-12: rgba(0, 0, 0, 0.08);
+    --zd-jw-border-dark-13: rgba(255, 255, 255, 0.12);
+
+    /* Fonts */
+    --zd-jw-font-serif-14: 'Bodoni Moda', serif;
+    --zd-jw-font-sans-15: 'Manrope', sans-serif;
+}
+
+/* =========================================
+   2. GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Manrope:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--zd-jw-font-sans-15);
+    color: var(--zd-jw-text-dark-8);
+    background-color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   3. LAYOUT CONTAINER & BREADCRUMBS
+   ========================================= */
+.product-page-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px 0px;
+}
+
+.breadcrumbs {
+    font-size: 11px;
+    color: var(--zd-jw-text-muted-9);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    width: 1350px;
+    justify-self: center;
+}
+
+.breadcrumbs a {
+    color: var(--zd-jw-text-muted-9);
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--zd-jw-text-dark-8);
+}
+
+.breadcrumbs .divider {
+    margin: 0 8px;
+    color: var(--zd-jw-border-light-12);
+}
+
+.breadcrumbs .current {
+    color: var(--zd-jw-text-dark-8);
+}
+
+/* =========================================
+   4. PRODUCT LAYOUT GRID (Left/Right)
+   ========================================= */
+.product-layout {
+    display: grid;
+    grid-template-columns: 55% 42%; /* Image takes more space as per design */
+    gap: 40px;
+    margin-bottom: 80px;
+    align-items: start;
+    width: 1350px;
+    justify-self: center;
+}
+
+/* =========================================
+   5. LEFT SIDE: IMAGES
+   ========================================= */
+.product-images {
+    position: sticky;
+    top: 20px;
+}
+
+.main-image {
+    background-color: var(--zd-jw-bg-cream-3);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.thumbnail-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid var(--zd-jw-border-light-12);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    background-color: var(--zd-jw-bg-cream-3);
+}
+
+.thumb.active, .thumb:hover {
+    border: 1px solid var(--zd-jw-text-dark-8);
+}
+
+/* =========================================
+   6. RIGHT SIDE: PRODUCT DETAILS
+   ========================================= */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.brand {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--zd-jw-gold-primary-5);
+    text-transform: uppercase;
+}
+
+.product-title {
+    font-family: var(--zd-jw-font-serif-14);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--zd-jw-text-dark-8);
+    line-height: 1.2;
+}
+
+.price {
+    font-family: var(--zd-jw-font-serif-14);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--zd-jw-bg-card-2);
+}
+
+.payment-info {
+    font-size: 13px;
+    color: var(--zd-jw-text-muted-9);
+    margin-top: -5px;
+}
+
+.divider-line {
+    border: none;
+    border-top: 1px solid var(--zd-jw-border-light-12);
+    margin: 10px 0;
+}
+
+/* --- Option Groups (Metal, Diamond, etc) --- */
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--zd-jw-text-dark-8);
+}
+
+.option-label span {
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    color: var(--zd-jw-text-muted-9);
+    margin-left: 5px;
+}
+
+/* --- Swatches --- */
+.swatches {
+    display: flex;
+    gap: 12px;
+}
+
+.swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--zd-jw-border-light-12);
+    cursor: pointer;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+.swatch.active {
+    outline-color: var(--zd-jw-text-dark-8);
+}
+
+/* --- Button Groups --- */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-option {
+    padding: 12px 18px;
+    border: 1px solid var(--zd-jw-border-light-12);
+    background: #ffffff;
+    font-size: 12px;
+    font-family: var(--zd-jw-font-sans-15);
+    color: var(--zd-jw-text-dark-8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 2px;
+}
+
+.btn-option.active {
+    background-color: var(--zd-jw-bg-dark-1);
+    color: var(--zd-jw-text-light-10);
+    border-color: var(--zd-jw-bg-dark-1);
+}
+
+.btn-option:hover:not(.active) {
+    border-color: var(--zd-jw-text-dark-8);
+}
+
+/* --- Info Box (Lightworks) --- */
+.info-box {
+    border: 1px solid var(--zd-jw-gold-primary-5);
+    padding: 30px 25px 30px 25px;
+    background-color: var(--zd-jw-bg-cream-3);
+    border-radius: 2px;
+    margin: 10px 0;
+}
+
+.info-box-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--zd-jw-gold-primary-5);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.info-box-desc {
+    font-size: 14px;
+    color: var(--zd-jw-text-muted-9);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.info-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.info-links a {
+    text-decoration: none;
+    color: var(--zd-jw-text-muted-9);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* --- Utility Classes --- */
+.link-underline {
+    font-size: 12px;
+    text-decoration: underline 1.2px var(--zd-jw-gold-primary-5);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    display: inline-block;
+    color: var(--zd-jw-bg-dark-1);
+    text-underline-position: under;
+}
+
+.text-muted {
+    color: var(--zd-jw-text-muted-9);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.mt-2 { margin-top: 11px; }
+.mt-3 { margin-top: 15px; }
+
+/* --- Action Buttons (Add to bag / Customize) --- */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-add-to-bag {
+    background-color: var(--zd-jw-gold-primary-5);
+    color: var(--zd-jw-bg-dark-1);
+    border: none;
+    padding: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn-add-to-bag:hover {
+    background-color: var(--zd-jw-gold-hover-6);
+}
+
+.btn-customize {
+    background-color: transparent;
+    color: var(--zd-jw-bg-dark-1);
+    border: 1px solid var(--zd-jw-bg-dark-1);
+    padding: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-customize:hover {
+    background-color: var(--zd-jw-bg-dark-1);
+    color: #ffffff;
+}
+
+/* --- Dark Box (Jeweler Review) --- */
+.dark-box {
+    background-color: var(--zd-jw-bg-dark-1);
+    color: var(--zd-jw-text-light-10);
+    padding: 30px 35px 30px 35px;
+    border-radius: 2px;
+    margin-top: 25px;
+}
+
+.dark-box h3 {
+    font-family: var(--zd-jw-font-sans-15);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.dark-box p {
+    font-size: 15px;
+    color: var(--zd-jw-text-green-11);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: var(--zd-jw-text-light-10);
+    border: 1px solid var(--zd-jw-border-dark-13);
+    padding: 17px 24px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: var(--zd-jw-text-light-10);
+    color: var(--zd-jw-bg-dark-1);
+}
+
+/* --- Included Box --- */
+.included-box {
+    border: 1px solid var(--zd-jw-gold-primary-5);
+    padding: 25px;
+    border-radius: 2px;
+    margin-top: 25px;
+    background-color: #ffffff;
+}
+
+.included-box h4 {
+    font-family: var(--zd-jw-font-serif-14);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--zd-jw-text-dark-8);
+}
+
+.included-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.included-box ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    color: var(--zd-jw-text-dark-8);
+}
+
+.included-box ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--zd-jw-gold-primary-5);
+    font-weight: bold;
+}
+
+/* =========================================
+   9. BOTTOM SECTION (About & Details)
+   ========================================= */
+.product-bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% Left, 50% Right */
+    gap: 80px; /* Space between left and right columns */
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid var(--zd-jw-border-light-12);
+    background-color: var(--zd-jw-bg-sand-4); /* Very light cream background */
+    padding: 60px 90px;
+    width: 100%;
+    margin-bottom: -30px;
+    justify-self: center;
+
+}
+
+/* --- General Section Title --- */
+.section-title {
+    font-family: var(--zd-jw-font-serif-14);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--zd-jw-text-dark-8);
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   10. LEFT COLUMN: About this design
+   ========================================= */
+.about-design-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.design-feature {
+    border-bottom: 1px solid var(--zd-jw-border-light-12);
+    padding-bottom: 20px;
+}
+
+.design-feature:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.design-feature h3 {
+    font-family: var(--zd-jw-font-serif-14);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--zd-jw-text-dark-8);
+    margin-bottom: 8px;
+}
+
+.design-feature p {
+    font-family: var(--zd-jw-font-sans-15);
+    font-size: 14px;
+    color: var(--zd-jw-text-muted-9);
+    line-height: 1.6;
+}
+
+/* =========================================
+   11. RIGHT COLUMN: Details Accordion
+   ========================================= */
+.details-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--zd-jw-border-light-12);
+}
+
+.accordion-item:first-child {
+    border-top: 1px solid var(--zd-jw-border-light-12);
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 0;
+    font-family: var(--zd-jw-font-sans-15);
+    font-size: 15px;
+    color: var(--zd-jw-text-dark-8);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.accordion-header:hover {
+    color: var(--zd-jw-gold-primary-5);
+}
+
+.accordion-header i {
+    font-size: 12px;
+    color: var(--zd-jw-text-muted-9);
+    transition: transform 0.3s ease;
+}
+
+/* Arrow rotation on active */
+.accordion-item.active .accordion-header i {
+    transform: rotate(90deg);
+    color: var(--zd-jw-text-dark-8);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-content p {
+    padding-bottom: 20px;
+    font-size: 14px;
+    color: var(--zd-jw-text-muted-9);
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   8. RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 992px) {
+    .product-layout {
+        grid-template-columns: 1fr; /* Stack them on smaller screens */
+        gap: 30px;
+    }
+    
+    .product-images {
+        position: static;
+    }
+
+    .product-bottom-section {
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .product-page-container {
+        padding: 20px 0px;
+    }
+
+    .product-title {
+        font-size: 26px;
+    }
+
+.breadcrumbs {
+    font-size: 11px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0px 15px;
+}
+
+.product-layout {width: 100%; padding: 0px 15px;}
+
+    .price {
+        font-size: 20px;
+    }
+    
+    .thumbnail-grid {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .thumb {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+
+    .btn-option {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .dark-box, .included-box, .info-box {
+        padding: 20px;
+    }
+
+    .info-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-bottom-section {
+        grid-template-columns: 1fr; /* Stack on mobile */
+        gap: 50px;
+        margin-top: 50px;
+        padding: 40px 15px;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .design-feature h3 {
+        font-size: 16px;
+    }
+
+    .design-feature p {
+        font-size: 12px;
+    }
+
+    .accordion-header {
+        font-size: 13px;
+        padding: 18px 0;
+    }
+
+}

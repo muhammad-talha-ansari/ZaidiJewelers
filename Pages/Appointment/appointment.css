@@ -1,0 +1,804 @@
+/* =========================================
+   ROOT VARIABLES
+   ========================================= */
+:root {
+    --ap-bg-dark: #0A2422;
+    --ap-bg-cream: #FBF9F4;
+    --ap-bg-sand: #F5F3EE;
+    --ap-gold: #D0A648;
+    --ap-gold-hover: #B08A32;
+    --ap-text-dark: #1B1C19;
+    --ap-text-muted: #727877;
+    --ap-border: #E0DFDB;
+    --ap-white: #ffffff;
+    --ap-font-serif: 'Bodoni Moda', serif;
+    --ap-font-sans: 'Manrope', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ap-font-sans);
+    color: var(--ap-text-dark);
+    background-color: var(--ap-white);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.ap-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 0px;
+}
+
+.text-center { text-align: center; }
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.ap-btn-gold {
+    display: inline-block;
+    background-color: var(--ap-gold);
+    color: var(--ap-bg-dark);
+    padding: 16px 40px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--ap-gold);
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: var(--ap-font-sans);
+    border-radius: 3px;
+}
+.ap-btn-gold:hover { background-color: var(--ap-white); color: var(--ap-bg-dark); border: 1px solid #0A2422;}
+
+.ap-btn-outline-dark {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--ap-white);
+    padding: 14px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--ap-white);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--ap-font-sans);
+    border-radius: 3px;
+}
+.ap-btn-outline-dark:hover {
+    background-color: var(--ap-white);
+    color: var(--ap-bg-dark);
+}
+
+#ap-btn-outline-dark-fr {
+    display: inline-block;
+    background-color: var(--ap-gold);
+    color: var(--ap-bg-dark);
+    padding: 14px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--ap-gold);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--ap-font-sans);
+    border-radius: 3px;
+}
+
+#ap-btn-outline-dark-fr:hover {
+    background-color: var(--ap-white);
+    color: var(--ap-bg-dark);
+    border: 1px solid var(--ap-bg-dark);
+}
+
+#ap-btn-outline-dark-sc {
+    display: inline-block;
+    background-color: var(--ap-white);
+    color: var(--ap-bg-dark);
+    padding: 14px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--ap-bg-dark);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--ap-font-sans);
+    border-radius: 3px;
+}
+
+#ap-btn-outline-dark-sc:hover {
+    background-color: var(--ap-bg-dark);
+    color: var(--ap-white);
+    border: 1px solid var(--ap-bg-dark);
+}
+
+/* =========================================
+   SECTION 1: HERO
+   ========================================= */
+.ap-hero-section {
+    background-color: var(--ap-bg-dark);
+    color: var(--ap-white);
+    padding: 60px 20px;
+}
+
+.ap-hero-inner {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ap-breadcrumb {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #d6d6d6;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ap-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--ap-gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.ap-hero-title {
+    font-family: var(--ap-font-serif);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.ap-hero-desc {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 30px;
+    max-width: 450px;
+}
+
+.ap-hero-btns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.ap-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    max-height: 400px;
+}
+
+/* =========================================
+   SECTION 2: VISIT TYPES
+   ========================================= */
+.ap-visit-types-section {
+    padding: 80px 0;
+    background-color: var(--ap-bg-cream);
+}
+
+.ap-section-title {
+    font-family: var(--ap-font-serif);
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.ap-section-sub {
+    font-size: 15px;
+    color: var(--ap-text-muted);
+    margin-bottom: 40px;
+}
+
+.ap-visit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ap-visit-card {
+    background-color: var(--ap-white);
+    border: 1px solid var(--ap-border);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ap-visit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--ap-gold);
+}
+
+.ap-card-icon {
+    color: var(--ap-gold);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.ap-visit-card h3 {
+    font-family: var(--ap-font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.ap-visit-card p {
+    font-size: 14px;
+    color: var(--ap-text-muted);
+    margin-bottom: 10px;
+    line-height: 1.6;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #0000000d;
+}
+
+.ap-card-meta {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #393a3a;
+    font-weight: 600;
+}
+
+/* =========================================
+   SECTION 3: BOOKING
+   ========================================= */
+.ap-booking-section {
+    padding: 60px 0;
+    background-color: var(--ap-bg-cream);
+    border-top: 1px solid var(--ap-border);
+}
+
+.ap-change-link {
+    text-decoration: underline 1px var(--ap-gold);
+    color: var(--ap-gold);
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.ap-booking-box {
+    background-color: var(--ap-white);
+    border: 1px solid var(--ap-border);
+    border-radius: 20px;
+    padding: 60px;
+    margin-top: 40px;
+    position: relative;
+}
+
+/* Step 1: Calendar & Time Grid */
+.ap-booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+}
+
+/* Calendar */
+.ap-calendar-wrapper {
+    border: 1px solid var(--ap-border);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.ap-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ap-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--ap-text-dark);
+    display: flex;
+    align-items: center;
+}
+
+.ap-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 12px;
+    color: var(--ap-bg-dark);
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.ap-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.ap-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.ap-day:hover:not(.disabled):not(.selected) {
+    border-color: var(--ap-gold);
+}
+
+.ap-day.selected {
+    background-color: var(--ap-bg-dark);
+    color: var(--ap-white);
+}
+
+.ap-day.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.ap-day.empty {
+    cursor: default;
+}
+
+.ap-calendar-note {
+    font-size: 11px;
+    color: var(--ap-text-muted);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Time Slots */
+.ap-timeslots-wrapper h3 {
+    font-family: var(--ap-font-serif);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.ap-location-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ap-text-muted);
+    margin-bottom: 20px;
+}
+
+.ap-location-row span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ap-timeslots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.ap-timeslot {
+    padding: 17px;
+    border: 1px solid var(--ap-border);
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: var(--ap-white);
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.ap-timeslot:hover:not(.disabled) {
+    border-color: var(--ap-gold);
+}
+
+.ap-timeslot.selected {
+    background-color: var(--ap-bg-dark);
+    color: var(--ap-white);
+    border-color: var(--ap-bg-dark);
+}
+
+.ap-timeslot.disabled {
+    background-color: var(--ap-bg-sand);
+    color: #ccc;
+    cursor: not-allowed;
+    font-style: italic;
+}
+
+.ap-timeslot-note {
+    font-size: 14px;
+    color: var(--ap-text-muted);
+    margin-top: 30px;
+    border-left: 2px solid var(--ap-gold);
+    padding: 10px 15px 10px 15px;
+}
+
+/* Booking Footer */
+.ap-booking-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--ap-border);
+    margin-top: 40px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ap-steps-indicator {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--ap-text-muted);
+    font-weight: 600;
+}
+
+.ap-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ap-step-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--ap-border);
+    color: var(--ap-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.ap-step.active { color: var(--ap-text-dark); }
+.ap-step.active .ap-step-num { background-color: var(--ap-gold); color: var(--ap-bg-dark); }
+.ap-step.completed .ap-step-num { background-color: var(--ap-bg-dark); color: var(--ap-white); }
+
+/* Error Message */
+.ap-error-msg {
+    background-color: #fce8e6;
+    color: #c5221f;
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-top: 15px;
+    border: 1px solid #fad2cf;
+}
+
+/* Step 2: Confirmation Form */
+.ap-confirm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+}
+
+.ap-session-info h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ap-bg-dark);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--ap-border);
+    padding-bottom: 10px;
+    font-weight: 900;
+}
+
+.ap-info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.ap-info-row span {
+    color: var(--ap-text-muted);
+    flex: 1;
+}
+
+.ap-info-row strong {
+    font-weight: 500;
+    text-align: right;
+    flex: 1;
+}
+
+.mt-4 { margin-top: 30px; }
+
+/* Form Styles */
+.ap-user-form h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ap-bg-dark);
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.ap-form-group {
+    margin-bottom: 20px;
+}
+
+.ap-form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--ap-text-dark);
+}
+
+.req { color: #c5221f; }
+
+.ap-form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e8e6e1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--ap-font-sans);
+    background-color: var(--ap-bg-cream);
+    transition: border 0.2s;
+}
+
+.ap-form-group input:focus {
+    outline: none;
+    border-color: var(--ap-gold);
+}
+
+/* Phone Input with Country Code */
+.ap-phone-input-wrap {
+    display: flex;
+    gap: 10px;
+}
+
+.ap-country-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--ap-border);
+    padding: 0 10px;
+    border-radius: 2px;
+    background-color: #F9F9F9;
+    position: relative;
+    cursor: pointer;
+}
+
+.ap-country-selector img {
+    width: 20px;
+    height: auto;
+    border-radius: 2px;
+}
+
+.ap-country-selector span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ap-country-selector select {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Success Box */
+.ap-success-box {
+    text-align: center;
+    padding: 80px 40px;
+}
+
+.ap-success-icon {
+    font-size: 60px;
+    color: var(--ap-gold);
+    margin-bottom: 20px;
+}
+
+.ap-success-box h2 {
+    font-family: var(--ap-font-serif);
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.ap-success-box p {
+    font-size: 14px;
+    color: var(--ap-text-muted);
+    margin-bottom: 10px;
+}
+
+.ap-success-sub {
+    margin-bottom: 30px !important;
+}
+
+/* =========================================
+   SECTION 4: GETTING HERE
+   ========================================= */
+.ap-getting-here-section {
+    padding: 80px 0;
+    background-color: var(--ap-bg-cream);
+    border-top: 1px solid var(--ap-border);
+}
+
+.ap-map-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ap-map-wrapper {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 420px;
+}
+
+.ap-map-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ap-map-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ap-map-card {
+    background-color: var(--ap-bg-dark);
+    color: var(--ap-white);
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    width: 200px;
+    display: none;
+}
+
+.ap-map-card .material-symbols-outlined {
+    color: var(--ap-gold);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.ap-map-card h4 {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.ap-map-card p {
+    font-size: 11px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.ap-map-parking {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--ap-gold);
+    text-transform: uppercase;
+}
+
+.ap-map-district-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--ap-white);
+    border: 1px solid var(--ap-border);
+    padding: 10px 15px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ap-directions-info .ap-section-title {
+    margin-bottom: 20px;
+}
+
+.ap-directions-desc {
+    font-size: 14px;
+    color: var(--ap-text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.ap-direction-box {
+    background-color: var(--ap-white);
+    border: 1px solid var(--ap-border);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.ap-dir-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ap-dir-header .material-symbols-outlined {
+    color: var(--ap-gold);
+}
+
+.ap-dir-header h4 {
+    font-size: 14px;
+}
+
+.ap-direction-box p {
+    font-size: 13px;
+    color: var(--ap-text-muted);
+    line-height: 1.6;
+}
+
+.ap-parking-note {
+    font-size: 12px;
+    color: var(--ap-text-dark);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ap-directions-btns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 992px) {
+    .ap-hero-inner, .ap-map-grid, .ap-confirm-grid { grid-template-columns: 1fr; gap: 40px; }
+    .ap-visit-grid { grid-template-columns: 1fr 1fr; }
+    .ap-booking-grid { grid-template-columns: 1fr; }
+    .ap-hero-image { order: -1; } /* Image upar */
+    .ap-map-wrapper { height: 300px; }
+}
+
+@media (max-width: 768px) {
+    .ap-hero-section { padding: 40px 15px; }
+    .ap-hero-title { font-size: 32px; }
+    .ap-visit-types-section, .ap-booking-section, .ap-getting-here-section { padding: 50px 15px 50px 15px; }
+    .ap-visit-grid { grid-template-columns: 1fr; }
+    .ap-booking-box { padding: 20px; }
+    .ap-calendar-wrapper { padding: 15px; }
+    .ap-timeslots-grid { grid-template-columns: 1fr; }
+    .ap-booking-footer { flex-direction: column; align-items: flex-start; }
+    .ap-footer-btns { width: 100%; display: flex; gap: 10px; }
+    .ap-footer-btns button { flex: 1; }
+    .ap-steps-indicator { flex-direction: column; gap: 10px; }
+    .ap-map-overlay { position: relative; top: 0; left: 0; transform: none; padding: 20px; }
+    .ap-map-card { width: 100%; }
+    .ap-directions-btns a { flex: 1; text-align: center; }
+    .ap-info-row { flex-direction: column; gap: 5px; }
+    .ap-info-row strong { text-align: left; }
+    .ap-section-title {font-size: 31px;}
+    .ap-visit-grid {gap: 12px;}
+}
