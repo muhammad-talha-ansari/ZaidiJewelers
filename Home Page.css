@@ -30,7 +30,7 @@
 
 body {
   font-family: var(--zd-jw-font-sans-15);
-  background-color: var(--zd-jw-bg-cream-3);
+  background-color: #FBF9F4;
   color: var(--zd-jw-text-dark-8);
   overflow-x: hidden;
 }
